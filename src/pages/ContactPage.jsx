@@ -1,8 +1,9 @@
 import React from 'react'
 import Header from '../components/Header'
 import Arrow from '../components/Arrow'
+import SiteFooter from '../components/SiteFooter'
 
-const contactEmail = 'james@jamesprivett.co.uk'
+const contactEmail = 'hello@jamesprivett.co.uk'
 
 export default function ContactPage() {
   const [form, setForm] = React.useState({
@@ -177,6 +178,7 @@ export default function ContactPage() {
           </div>
         </section>
       </main>
+      <SiteFooter />
     </div>
   )
 }

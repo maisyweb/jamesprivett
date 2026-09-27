@@ -3,6 +3,7 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { supabase } from '../lib/supabase'
 import Header from '../components/Header'
+import SiteFooter from '../components/SiteFooter'
 
 export default function ArticlePage({ slug }) {
   const [article, setArticle] = React.useState(null)
@@ -198,6 +199,7 @@ export default function ArticlePage({ slug }) {
           </div>
         </article>
       </main>
+      <SiteFooter />
     </div>
   )
 }
