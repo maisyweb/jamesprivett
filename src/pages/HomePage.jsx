@@ -5,6 +5,7 @@ import FeatureCard from '../components/FeatureCard'
 import InfoCard from '../components/InfoCard'
 import StatCard from '../components/StatCard'
 import Arrow from '../components/Arrow'
+import SiteFooter from '../components/SiteFooter'
 
 export default function HomePage() {
   const developmentAreas = [
@@ -389,21 +390,7 @@ export default function HomePage() {
         </section>
       </main>
 
-      <footer className="border-t border-white/10">
-        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-8 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:px-8">
-          <div>
-            <span className="font-medium text-slate-300">JAMES PRIVETT</span>
-            <span className="mx-2">·</span>Build things. Help people. Keep
-            improving.
-          </div>
-          <div className="flex items-center gap-4">
-            <a href="/cv">CV</a>
-            <a href="https://github.com" aria-label="GitHub">
-              GitHub
-            </a>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   )
 }

@@ -4,6 +4,7 @@ import Header from '../components/Header'
 import SectionHeading from '../components/SectionHeading'
 import Arrow from '../components/Arrow'
 import ArticleCard from '../components/ArticleCard'
+import SiteFooter from '../components/SiteFooter'
 
 export default function MentoringPage() {
   const [featuredArticles, setFeaturedArticles] = React.useState([])
@@ -516,20 +517,8 @@ export default function MentoringPage() {
             </div>
           </div>
         </section>
-
-        {/* Final CTA */}
-        <section className="border-t border-white/10">
-          <div className="mx-auto max-w-6xl px-6 py-16 sm:px-8">
-            <a
-              href="/"
-              className="group inline-flex items-center gap-2 text-sm font-semibold text-slate-500 transition hover:text-white"
-            >
-              Back to the main site
-              <Arrow />
-            </a>
-          </div>
-        </section>
       </main>
+      <SiteFooter />
     </div>
   )
 }

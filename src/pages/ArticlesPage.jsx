@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '../components/Header'
 import { supabase } from '../lib/supabase'
+import SiteFooter from '../components/SiteFooter'
 
 const sections = [
   'All',
@@ -544,6 +545,7 @@ export default function ArticlesPage() {
           </div>
         </section>
       </main>
+      <SiteFooter />
     </div>
   )
 }
