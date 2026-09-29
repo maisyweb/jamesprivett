@@ -15,6 +15,7 @@ import ArticleIdeaEditorPage from './pages/ArticleIdeaEditorPage'
 import AdminArticlesPage from './pages/AdminArticlesPage'
 import AdminContactEmailsPage from './pages/AdminContactEmailsPage'
 import ContactPage from './pages/ContactPage'
+import NotFoundPage from './pages/NotFoundPage'
 import SEO from './components/SEO'
 
 const siteUrl = 'https://jamesprivett.co.uk'
@@ -180,5 +181,9 @@ export default function App() {
     return renderPage(<HomePage />, pageMetadata.home)
   }
 
-  return renderPage(<HomePage />, { ...pageMetadata.home, noindex: true })
+  return renderPage(<NotFoundPage />, {
+    title: 'Page Not Found — James Privett',
+    description: "The page you're looking for doesn't exist or may have moved.",
+    noindex: true,
+  })
 }
