@@ -5,9 +5,20 @@ import SectionHeading from '../components/SectionHeading'
 export default function CVPage() {
   const roles = [
     {
+      title: 'Senior Engineer',
+      company: 'Skillcast',
+      dates: 'May 2023 – Present',
+      location: 'London',
+      bullets: [
+        'Designed and delivered a self-service customer journey, enabling users to register, select and purchase Skillcast products without requiring manual onboarding or sales support.',
+        'Integrated Stripe to support secure online payments, connecting registration, product selection and payment into a streamlined end-to-end user experience.',
+        'Worked across frontend and backend development to deliver new functionality within the existing portal, collaborating with product and business stakeholders to define requirements and improve the customer experience.',
+      ],
+    },
+    {
       title: 'Lead Engineer',
       company: 'Unmind',
-      dates: 'Mar 2020 – Present',
+      dates: 'Mar 2020 – Mar 2023',
       location: 'London',
       bullets: [
         'Leading multiple engineering teams while supporting engineers’ personal career development and helping teams stay happy, healthy and motivated.',
