@@ -3,9 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="James Privett — software engineer, mentor, and lifelong learner." />
+    <meta
+      name="description"
+      content="James Privett — software engineer, mentor, and lifelong learner."
+    />
     <title>James Privett — Software Engineer</title>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-XD8WD8XC9R"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+
+      function gtag() {
+        window.dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+      gtag('config', 'G-XD8WD8XC9R', {
+        send_page_view: false,
+      })
+    </script>
   </head>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>

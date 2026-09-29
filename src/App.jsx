@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import HomePage from './pages/HomePage'
 import MentoringPage from './pages/MentoringPage'
@@ -18,6 +18,17 @@ import ContactPage from './pages/ContactPage'
 
 export default function App() {
   const path = window.location.pathname
+
+  useEffect(() => {
+    if (!import.meta.env.PROD) return
+    if (typeof window.gtag !== 'function') return
+
+    window.gtag('event', 'page_view', {
+      page_path: `${window.location.pathname}${window.location.search}${window.location.hash}`,
+      page_title: document.title,
+      page_location: window.location.href,
+    })
+  }, [])
 
   if (path === '/cv' || path === '/cv/') {
     return <CVPage />
