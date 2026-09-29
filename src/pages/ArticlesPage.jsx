@@ -50,7 +50,7 @@ function ArticleImage({ article, featured = false }) {
     return (
       <img
         src={article.cover_image}
-        alt=""
+        alt={`${article.title} article cover`}
         className={`w-full object-cover transition duration-700 group-hover:scale-[1.02] ${
           featured ? 'aspect-[16/8] lg:aspect-auto lg:h-full' : 'aspect-video'
         }`}

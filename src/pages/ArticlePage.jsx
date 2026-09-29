@@ -4,6 +4,9 @@ import remarkGfm from 'remark-gfm'
 import { supabase } from '../lib/supabase'
 import Header from '../components/Header'
 import SiteFooter from '../components/SiteFooter'
+import SEO from '../components/SEO'
+
+const siteUrl = 'https://jamesprivett.co.uk'
 
 export default function ArticlePage({ slug }) {
   const [article, setArticle] = React.useState(null)
@@ -56,9 +59,16 @@ export default function ArticlePage({ slug }) {
     loadArticle()
   }, [slug])
 
+  const requestedCanonical = `${siteUrl}/articles/${encodeURIComponent(slug)}`
+
   if (loading) {
     return (
       <div className="min-h-screen bg-[#080b10] text-slate-100">
+        <SEO
+          title="Article — James Privett"
+          canonical={requestedCanonical}
+          noindex
+        />
         <Header />
 
         <main className="mx-auto max-w-4xl px-6 py-24 text-center sm:px-8">
@@ -71,6 +81,11 @@ export default function ArticlePage({ slug }) {
   if (error || !article) {
     return (
       <div className="min-h-screen bg-[#080b10] text-slate-100">
+        <SEO
+          title="Article not found — James Privett"
+          canonical={requestedCanonical}
+          noindex
+        />
         <Header />
 
         <main className="mx-auto max-w-4xl px-6 py-24 text-center sm:px-8">
@@ -110,8 +125,33 @@ export default function ArticlePage({ slug }) {
           ? 'text-amber-400'
           : 'text-slate-500'
 
+  const canonical = `${siteUrl}/articles/${encodeURIComponent(article.slug)}`
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: article.title,
+    description: article.excerpt || undefined,
+    image: article.cover_image || undefined,
+    datePublished: article.published_at || undefined,
+    author: {
+      '@type': 'Person',
+      name: 'James Privett',
+      url: siteUrl,
+    },
+    mainEntityOfPage: canonical,
+  }
+
   return (
     <div className="min-h-screen bg-[#080b10] text-slate-100">
+      <SEO
+        title={`${article.title} | James Privett`}
+        description={article.excerpt || ''}
+        canonical={canonical}
+        image={article.cover_image}
+        type="article"
+        publishedTime={article.published_at}
+        structuredData={articleSchema}
+      />
       <Header />
 
       <main>
@@ -159,7 +199,7 @@ export default function ArticlePage({ slug }) {
               <div className="overflow-hidden rounded-[2rem]">
                 <img
                   src={article.cover_image}
-                  alt=""
+                  alt={`${article.title} article cover`}
                   className="aspect-video w-full object-cover"
                 />
               </div>
