@@ -13,6 +13,7 @@ import EngineeringPage from './pages/EngineeringPage'
 import ArticleIdeasPage from './pages/ArticleIdeasPage'
 import ArticleIdeaEditorPage from './pages/ArticleIdeaEditorPage'
 import AdminArticlesPage from './pages/AdminArticlesPage'
+import AdminContactEmailsPage from './pages/AdminContactEmailsPage'
 import ContactPage from './pages/ContactPage'
 
 export default function App() {
@@ -80,6 +81,10 @@ export default function App() {
 
   if (path === '/admin/articles' || path === '/admin/articles/') {
     return <AdminArticlesPage />
+  }
+
+  if (path === '/admin/contact-emails' || path === '/admin/contact-emails/') {
+    return <AdminContactEmailsPage />
   }
 
   if (path === '/admin' || path === '/admin/') {
