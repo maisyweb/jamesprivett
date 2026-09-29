@@ -5,6 +5,7 @@ import { supabase } from '../lib/supabase'
 import Header from '../components/Header'
 import SiteFooter from '../components/SiteFooter'
 import SEO from '../components/SEO'
+import Arrow from '../components/Arrow'
 
 const siteUrl = 'https://jamesprivett.co.uk'
 
@@ -80,7 +81,7 @@ export default function ArticlePage({ slug }) {
 
   if (error || !article) {
     return (
-      <div className="min-h-screen bg-[#080b10] text-slate-100">
+      <div className="flex min-h-screen flex-col overflow-hidden bg-[#090b0f] text-[#f3f4f6]">
         <SEO
           title="Article not found — James Privett"
           canonical={requestedCanonical}
@@ -88,18 +89,41 @@ export default function ArticlePage({ slug }) {
         />
         <Header />
 
-        <main className="mx-auto max-w-4xl px-6 py-24 text-center sm:px-8">
-          <p className="text-red-400">
-            {error || 'Unable to find this article.'}
-          </p>
+        <main className="relative isolate flex flex-1 items-center overflow-hidden pt-20">
+          <div className="grid-bg absolute inset-0 -z-20" />
+          <div className="hero-glow absolute inset-0 -z-10" />
 
-          <a
-            href="/articles"
-            className="mt-6 inline-block text-sm font-semibold text-slate-400 underline underline-offset-4 transition hover:text-white"
-          >
-            ← Back to articles
-          </a>
+          <section className="mx-auto w-full max-w-4xl px-5 py-20 sm:px-8 sm:py-28">
+            <div className="reveal max-w-2xl">
+              <p className="flex items-center gap-3 text-xs font-bold uppercase tracking-[.3em] text-[var(--articles)]">
+                <span className="h-px w-8 bg-[var(--articles)]" />
+                Article not found
+              </p>
+              <h1 className="mt-6 text-4xl font-semibold leading-tight tracking-[-.035em] sm:text-5xl">
+                This article seems to have slipped away.
+              </h1>
+              <p className="mt-5 max-w-xl text-base leading-7 text-slate-400 sm:text-lg">
+                We couldn't find the article you were looking for. It may have
+                moved, or it may no longer be available.
+              </p>
+              <div className="mt-8 flex flex-wrap items-center gap-4">
+                <a
+                  className="rounded-full bg-[var(--articles)] px-5 py-3 text-sm font-semibold text-[#06201d] transition hover:-translate-y-0.5 hover:brightness-110"
+                  href="/articles"
+                >
+                  Browse articles <Arrow />
+                </a>
+                <a
+                  className="rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-slate-200 transition hover:border-white/30 hover:bg-white/5"
+                  href="/"
+                >
+                  Back to homepage
+                </a>
+              </div>
+            </div>
+          </section>
         </main>
+        <SiteFooter />
       </div>
     )
   }
