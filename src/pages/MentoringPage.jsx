@@ -207,6 +207,35 @@ export default function MentoringPage() {
                 providing perspective, creating a safe place to think, and
                 helping someone navigate their next challenge.
               </p>
+
+              <div className="mt-8 max-w-3xl border-l-2 border-[var(--mentoring)] bg-gradient-to-r from-[#080b10]/65 via-[#080b10]/45 to-transparent py-4 pl-5 pr-5">
+                <h2 className="text-lg font-semibold text-white">
+                  Looking for a mentor?
+                </h2>
+                <p className="mt-2 text-sm leading-6 text-slate-300 sm:text-base">
+                  I&apos;m currently open to taking on a small number of
+                  additional mentees. If you&apos;re an early-career
+                  professional or taking your first steps into management or
+                  leadership, I&apos;d love to hear from you.
+                </p>
+                <p className="mt-3 text-sm leading-6 text-slate-300 sm:text-base">
+                  <strong className="font-semibold text-white">
+                    The first session is completely free and lasts around an
+                    hour.
+                  </strong>{' '}
+                  It&apos;s an opportunity for us to talk about where you are,
+                  what you&apos;re hoping to achieve and what you&apos;re
+                  looking for from a mentor. More importantly, it&apos;s a
+                  chance for both of us to decide whether we&apos;d be a good
+                  fit before making any commitment.
+                </p>
+                <a
+                  href="/contact"
+                  className="mt-5 inline-flex items-center gap-2 rounded-full bg-[var(--mentoring)] px-5 py-3 text-sm font-semibold text-[#160c20] transition hover:-translate-y-0.5 hover:brightness-110"
+                >
+                  Get in touch <Arrow />
+                </a>
+              </div>
             </div>
           </div>
         </section>
