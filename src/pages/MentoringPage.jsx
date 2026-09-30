@@ -168,13 +168,6 @@ export default function MentoringPage() {
     ],
   ]
 
-  const questions = [
-    'What are you avoiding because it feels uncomfortable?',
-    "What would you do if you didn't need everyone else's approval?",
-    'Are you solving the right problem?',
-    'What does good enough look like here?',
-  ]
-
   return (
     <div className="min-h-screen bg-[#080b10] text-slate-100">
       <Header />
@@ -197,12 +190,12 @@ export default function MentoringPage() {
           <div className="absolute inset-0 bg-[#080b10]/10" />
 
           <div className="relative mx-auto max-w-6xl px-6 py-20 sm:px-8 sm:py-28 lg:py-32">
-            <div className="max-w-2xl">
+            <div className="max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-purple-400">
                 Mentoring
               </p>
 
-              <h1 className="mt-5 text-4xl font-semibold tracking-tight text-white sm:text-6xl">
+              <h1 className="mt-5 max-w-2xl text-4xl font-semibold tracking-tight text-white sm:text-6xl">
                 A good mentor helps you{' '}
                 <span className="text-[var(--mentoring)]">
                   become better at being you.
@@ -338,24 +331,35 @@ export default function MentoringPage() {
           </div>
         </section>
 
-        <section className="border-y border-white/10 bg-[#0d1018]">
+        {/* What success looks like */}
+        <section>
           <div className="mx-auto max-w-6xl px-6 py-20 sm:px-8 sm:py-28">
-            <div className="mx-auto max-w-4xl">
-              <p className="text-xs font-semibold uppercase tracking-[.2em] text-[var(--mentoring)]">
-                04 · Questions worth asking
+            <div className="mx-auto max-w-3xl text-center">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-purple-400">
+                04 · What success looks like
               </p>
-              <h2 className="mt-5 text-4xl font-semibold tracking-tight text-white sm:text-6xl">
-                Good questions create room to move.
+
+              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+                The goal is independence.
               </h2>
-              <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-2">
-                {questions.map((question) => (
-                  <div
-                    key={question}
-                    className="bg-[#0e1218] p-7 text-xl leading-8 text-slate-200 transition hover:bg-[var(--mentoring)]/10 hover:text-white sm:p-9"
-                  >
-                    “{question}”
-                  </div>
-                ))}
+
+              <div className="mt-8 space-y-6 text-lg leading-8 text-slate-400">
+                <p>
+                  The best mentoring relationship shouldn&apos;t create
+                  dependence on the mentor.
+                </p>
+
+                <p>
+                  It should leave someone with better judgement, more confidence
+                  and the ability to handle the next challenge without needing
+                  someone else to tell them what to do.
+                </p>
+
+                <p>
+                  Ultimately, I think a mentor measures their success by how
+                  much the mentee grows — and by how naturally they become
+                  capable of navigating things on their own.
+                </p>
               </div>
             </div>
           </div>
@@ -367,7 +371,7 @@ export default function MentoringPage() {
             <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-purple-400">
-                  06 · Articles
+                  05 · Articles
                 </p>
 
                 <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
@@ -484,36 +488,40 @@ export default function MentoringPage() {
           </div>
         </section>
 
-        {/* What success looks like */}
-        <section>
-          <div className="mx-auto max-w-6xl px-6 py-20 sm:px-8 sm:py-28">
-            <div className="mx-auto max-w-3xl text-center">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-purple-400">
-                07 · What success looks like
+        {/* Mentoring invitation */}
+        <section className="border-t border-white/10 bg-[#0d1018]">
+          <div className="mx-auto max-w-6xl px-6 py-20 sm:px-8 sm:py-24">
+            <div className="mx-auto max-w-3xl">
+              <p className="text-xs font-semibold uppercase tracking-[.2em] text-[var(--mentoring)]">
+                Mentoring
               </p>
-
               <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-                The goal is independence.
+                Let&apos;s see if we&apos;re a good fit.
               </h2>
-
-              <div className="mt-8 space-y-6 text-lg leading-8 text-slate-400">
-                <p>
-                  The best mentoring relationship shouldn&apos;t create
-                  dependence on the mentor.
-                </p>
-
-                <p>
-                  It should leave someone with better judgement, more confidence
-                  and the ability to handle the next challenge without needing
-                  someone else to tell them what to do.
-                </p>
-
-                <p>
-                  Ultimately, I think a mentor measures their success by how
-                  much the mentee grows — and by how naturally they become
-                  capable of navigating things on their own.
-                </p>
-              </div>
+              <p className="mt-5 text-base leading-7 text-slate-400 sm:text-lg">
+                I&apos;m currently open to taking on a small number of
+                additional mentees.
+              </p>
+              <p className="mt-4 text-base leading-7 text-slate-400 sm:text-lg">
+                The first session is{' '}
+                <strong className="font-semibold text-white">
+                  free and lasts around an hour.
+                </strong>{' '}
+                We&apos;ll use that time to understand what you&apos;re looking
+                for, talk through your goals and see whether my approach to
+                mentoring feels right for you.
+              </p>
+              <p className="mt-4 text-base leading-7 text-slate-400 sm:text-lg">
+                There&apos;s no obligation to continue afterwards. The most
+                important thing is that we both feel the relationship will be
+                useful.
+              </p>
+              <a
+                href="/contact"
+                className="mt-7 inline-flex items-center gap-2 rounded-full bg-[var(--mentoring)] px-5 py-3 text-sm font-semibold text-[#160c20] transition hover:-translate-y-0.5 hover:brightness-110"
+              >
+                Get in touch <Arrow />
+              </a>
             </div>
           </div>
         </section>
