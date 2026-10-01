@@ -192,7 +192,7 @@ export default function NewArticlePage() {
       }
     }
 
-    window.location.href = '/admin'
+    window.location.href = '/admin/articles'
   }
 
   return (
