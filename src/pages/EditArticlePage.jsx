@@ -4,6 +4,7 @@ import ArticleEditor from '../components/admin/ArticleEditor'
 
 export default function EditArticlePage({ articleId }) {
   const [article, setArticle] = React.useState(null)
+  const [originalStatus, setOriginalStatus] = React.useState('draft')
   const [tags, setTags] = React.useState([])
   const [loading, setLoading] = React.useState(true)
   const [saving, setSaving] = React.useState(false)
@@ -67,11 +68,12 @@ export default function EditArticlePage({ articleId }) {
         reading_time: articleData.reading_time || '',
         status: articleData.status || 'draft',
         cover_image: articleData.cover_image || '',
-        featured: articleData.featured || '',
+        featured: articleData.featured ?? false,
         tagIds: (articleData.article_tags || []).map(
           (relationship) => relationship.tag_id
         ),
       })
+      setOriginalStatus(articleData.status || 'draft')
 
       setTags(tagData || [])
       setLoading(false)
@@ -149,24 +151,26 @@ export default function EditArticlePage({ articleId }) {
 
     setSaving(true)
 
+    const articleValues = {
+      title: article.title.trim(),
+      slug: article.slug.trim(),
+      section: article.section || null,
+      category: article.category || null,
+      excerpt: article.excerpt.trim() || null,
+      content: article.content.trim(),
+      cover_image: article.cover_image || null,
+      featured: Boolean(article.featured),
+      reading_time: article.reading_time ? Number(article.reading_time) : null,
+      status: article.status,
+    }
+
+    if (originalStatus === 'draft' && article.status === 'published') {
+      articleValues.published_at = new Date().toISOString()
+    }
+
     const { error: articleError } = await supabase
       .from('articles')
-      .update({
-        title: article.title.trim(),
-        slug: article.slug.trim(),
-        section: article.section || null,
-        category: article.category || null,
-        excerpt: article.excerpt.trim() || null,
-        content: article.content.trim(),
-        cover_image: article.cover_image || null,
-        featured: article.featured,
-        reading_time: article.reading_time
-          ? Number(article.reading_time)
-          : null,
-        status: article.status,
-        published_at:
-          article.status === 'published' ? new Date().toISOString() : null,
-      })
+      .update(articleValues)
       .eq('id', articleId)
 
     if (articleError) {
@@ -206,7 +210,7 @@ export default function EditArticlePage({ articleId }) {
       }
     }
 
-    window.location.href = '/admin'
+    window.location.href = '/admin/articles'
   }
 
   if (loading) {
