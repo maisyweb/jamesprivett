@@ -121,11 +121,15 @@ export default function ArticleEditor({
             className="mt-2 w-full rounded-xl border border-white/10 bg-[#0e1218] px-4 py-3 text-base text-white outline-none transition focus:border-white/25"
           >
             <option value="">Select category</option>
-            <option value="Lessons learned">Lessons learned</option>
-            <option value="Nutrition">Nutrition</option>
-            <option value="Personal Development">Personal Development</option>
+            <option value="AI & Engineering">AI & Engineering</option>
+            <option value="Mindset">Mindset</option>
+            <option value="Leadership">Leadership</option>
+            <option value="Self-Improvement">Self-Improvement</option>
+            <option value="Mentoring">Mentoring</option>
             <option value="Habits">Habits</option>
-            <option value="Movement">Movement</option>
+            <option value="Getting Started">Getting Started</option>
+            <option value="Stuff">Stuff</option>
+            <option value="Case Study">Case Study</option>
           </select>
         </div>
       </div>
