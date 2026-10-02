@@ -74,8 +74,8 @@ export function percent(numerator, denominator) {
 export function normalizeDailyLog(row) {
     return {
         ...row,
-        weight_lb: row.weight_lb ? ? row.weight ? ? null,
-        calories_kcal: row.calories_kcal ? ? row.calories ? ? null,
+        weight_lb: row.weight_lb ?? row.weight ?? null,
+        calories_kcal: row.calories_kcal ?? row.calories ?? null,
     }
 }
 
@@ -215,7 +215,7 @@ export function calculateWeeklyAverages(logs, fields) {
         const bucket = buckets.get(weekStart) || { log_date: weekStart, values: {} }
 
         for (const field of fields) {
-            bucket.values[field] || = []
+            bucket.values[field] ||= []
             const value = numericValue(log[field])
             if (value !== null) bucket.values[field].push(value)
         }
