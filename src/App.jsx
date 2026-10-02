@@ -14,6 +14,8 @@ import ArticleIdeasPage from './pages/ArticleIdeasPage'
 import ArticleIdeaEditorPage from './pages/ArticleIdeaEditorPage'
 import AdminArticlesPage from './pages/AdminArticlesPage'
 import AdminContactEmailsPage from './pages/AdminContactEmailsPage'
+import AdminPersonalDevelopmentDashboardPage from './pages/AdminPersonalDevelopmentDashboardPage'
+import AdminPersonalDevelopmentJournalPage from './pages/AdminPersonalDevelopmentJournalPage'
 import ContactPage from './pages/ContactPage'
 import NotFoundPage from './pages/NotFoundPage'
 import SEO from './components/SEO'
@@ -171,6 +173,26 @@ export default function App() {
 
   if (path === '/admin/contact-emails' || path === '/admin/contact-emails/') {
     return renderPage(<AdminContactEmailsPage />, { noindex: true })
+  }
+
+  if (
+    path === '/admin/personal-development/dashboard' ||
+    path === '/admin/personal-development/dashboard/'
+  ) {
+    return renderPage(<AdminPersonalDevelopmentDashboardPage />, {
+      noindex: true,
+    })
+  }
+
+  if (
+    path === '/admin/personal-development' ||
+    path === '/admin/personal-development/' ||
+    path === '/admin/daily-development' ||
+    path === '/admin/daily-development/'
+  ) {
+    return renderPage(<AdminPersonalDevelopmentJournalPage />, {
+      noindex: true,
+    })
   }
 
   if (path === '/admin' || path === '/admin/') {
