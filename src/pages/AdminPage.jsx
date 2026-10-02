@@ -267,6 +267,12 @@ function AdminDashboard({ session, onSignOut }) {
 
           <div className="flex flex-wrap gap-3">
             <a
+              href="/admin/personal-development/dashboard"
+              className="rounded-full border border-white/10 px-5 py-3 text-sm font-semibold text-slate-300 transition hover:border-white/20 hover:text-white"
+            >
+              Personal development dashboard
+            </a>
+            <a
               href="/admin/contact-emails"
               className="rounded-full border border-white/10 px-5 py-3 text-sm font-semibold text-slate-300 transition hover:border-white/20 hover:text-white"
             >

@@ -31,11 +31,19 @@ designed for client use; never put a Supabase service-role key or Resend API key
 in this file. Restart the dev server after changing environment variables.
 
 The app expects these Supabase tables: `articles`, `article_tags`, `tags`,
-`article_ideas`, `personal_metrics`, and `personal_mood`. This repository does
-not currently include migrations for those tables, so they must already exist
-in the selected project with appropriate Row Level Security (RLS) policies.
-Only the `contact_emails` table is created by a migration in this repository;
-see [Contact form email](#contact-form-email).
+`article_ideas`, `personal_metrics`, `personal_mood`, `daily_logs`,
+`habit_definitions`, `daily_habits`, and `development_events`. These
+application-owned tables must already exist in the
+selected project before applying the personal-development journal migration;
+it renames `weight` to `weight_lb` and `calories` to `calories_kcal`, adds
+`alcohol_units`, and applies owner-scoped RLS policies. Only the
+`contact_emails` and personal-development journal changes are tracked as
+migrations in this repository; see [Contact form email](#contact-form-email).
+
+Apply migrations with `supabase db push` after linking the intended project.
+Review existing RLS policies before applying them. The journal migration adds
+restrictive owner checks so existing permissive policies cannot grant access to
+another user's journal data.
 
 Article image uploads expect a Storage bucket named `article-images`. Configure
 the bucket and its upload/read policies in Supabase Storage before using image
