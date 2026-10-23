@@ -309,18 +309,21 @@ export default function AdminMentoringClientDetailPage({
   return (
     <div className="min-h-screen bg-[#090b0f] text-[#f3f4f6]">
       <AdminHeader
-        title={isNewClient
-          ? 'New client'
-          : `${form.first_name || 'Client'} ${form.last_name || ''}`.trim() || 'Client'}
+        title={
+          isNewClient
+            ? 'New client'
+            : `${form.first_name || 'Client'} ${form.last_name || ''}`.trim() ||
+              'Client'
+        }
         eyebrow="Admin / Mentoring"
-        actions={(
+        actions={
           <a
             href="/admin/mentoring/clients"
             className="rounded-lg border border-white/10 px-3 py-2 text-sm text-slate-400 transition hover:border-white/20 hover:text-white"
           >
             Clients
           </a>
-        )}
+        }
       />
 
       <main className="mx-auto max-w-5xl px-5 py-7 sm:px-8 sm:py-9">
@@ -334,7 +337,9 @@ export default function AdminMentoringClientDetailPage({
                 <a
                   key={section.id}
                   href={section.href}
-                  aria-current={activeSection === section.id ? 'page' : undefined}
+                  aria-current={
+                    activeSection === section.id ? 'page' : undefined
+                  }
                   className={`border-b-2 px-1 pb-3 text-sm transition ${
                     activeSection === section.id
                       ? 'border-[var(--mentoring)] font-semibold text-white'
@@ -360,104 +365,108 @@ export default function AdminMentoringClientDetailPage({
           </p>
         )}
 
-        {(isNewClient || activeSection === 'overview') && <form
-          onSubmit={handleSave}
-          className="rounded-xl border border-white/10 bg-[#0e1218] p-5 sm:p-6"
-        >
-          <div className="grid gap-5 md:grid-cols-2">
-            <label className="block">
-              <span className="mb-2 block text-sm text-slate-400">
-                First name
-              </span>
-              <input
-                type="text"
-                name="first_name"
-                value={form.first_name}
-                onChange={handleChange}
-                className="w-full rounded-xl border border-white/10 bg-[#090b0f] px-4 py-3 text-sm text-white outline-none transition focus:border-[var(--mentoring)]/50"
-              />
-            </label>
+        {(isNewClient || activeSection === 'overview') && (
+          <form
+            onSubmit={handleSave}
+            className="rounded-xl border border-white/10 bg-[#0e1218] p-5 sm:p-6"
+          >
+            <div className="grid gap-5 md:grid-cols-2">
+              <label className="block">
+                <span className="mb-2 block text-sm text-slate-400">
+                  First name
+                </span>
+                <input
+                  type="text"
+                  name="first_name"
+                  value={form.first_name}
+                  onChange={handleChange}
+                  className="w-full rounded-xl border border-white/10 bg-[#090b0f] px-4 py-3 text-sm text-white outline-none transition focus:border-[var(--mentoring)]/50"
+                />
+              </label>
 
-            <label className="block">
-              <span className="mb-2 block text-sm text-slate-400">
-                Last name
-              </span>
-              <input
-                type="text"
-                name="last_name"
-                value={form.last_name}
-                onChange={handleChange}
-                className="w-full rounded-xl border border-white/10 bg-[#090b0f] px-4 py-3 text-sm text-white outline-none transition focus:border-[var(--mentoring)]/50"
-              />
-            </label>
+              <label className="block">
+                <span className="mb-2 block text-sm text-slate-400">
+                  Last name
+                </span>
+                <input
+                  type="text"
+                  name="last_name"
+                  value={form.last_name}
+                  onChange={handleChange}
+                  className="w-full rounded-xl border border-white/10 bg-[#090b0f] px-4 py-3 text-sm text-white outline-none transition focus:border-[var(--mentoring)]/50"
+                />
+              </label>
 
-            <label className="block md:col-span-2">
-              <span className="mb-2 block text-sm text-slate-400">Email</span>
-              <input
-                type="email"
-                name="email"
-                value={form.email}
-                onChange={handleChange}
-                className="w-full rounded-xl border border-white/10 bg-[#090b0f] px-4 py-3 text-sm text-white outline-none transition focus:border-[var(--mentoring)]/50"
-              />
-            </label>
+              <label className="block md:col-span-2">
+                <span className="mb-2 block text-sm text-slate-400">Email</span>
+                <input
+                  type="email"
+                  name="email"
+                  value={form.email}
+                  onChange={handleChange}
+                  className="w-full rounded-xl border border-white/10 bg-[#090b0f] px-4 py-3 text-sm text-white outline-none transition focus:border-[var(--mentoring)]/50"
+                />
+              </label>
 
-            <label className="block">
-              <span className="mb-2 block text-sm text-slate-400">Status</span>
-              <select
-                name="status"
-                value={form.status}
-                onChange={handleChange}
-                className="w-full rounded-xl border border-white/10 bg-[#090b0f] px-4 py-3 text-sm text-white outline-none transition focus:border-[var(--mentoring)]/50"
-              >
-                <option value="draft">Draft</option>
-                <option value="invited">Invited</option>
-                <option value="active">Active</option>
-                <option value="suspended">Suspended</option>
-                <option value="ended">Ended</option>
-              </select>
-            </label>
+              <label className="block">
+                <span className="mb-2 block text-sm text-slate-400">
+                  Status
+                </span>
+                <select
+                  name="status"
+                  value={form.status}
+                  onChange={handleChange}
+                  className="w-full rounded-xl border border-white/10 bg-[#090b0f] px-4 py-3 text-sm text-white outline-none transition focus:border-[var(--mentoring)]/50"
+                >
+                  <option value="draft">Draft</option>
+                  <option value="invited">Invited</option>
+                  <option value="active">Active</option>
+                  <option value="suspended">Suspended</option>
+                  <option value="ended">Ended</option>
+                </select>
+              </label>
 
-            <label className="block">
-              <span className="mb-2 block text-sm text-slate-400">
-                Invitation status
-              </span>
-              <select
-                name="invitation_status"
-                value={form.invitation_status}
-                onChange={handleChange}
-                className="w-full rounded-xl border border-white/10 bg-[#090b0f] px-4 py-3 text-sm text-white outline-none transition focus:border-[var(--mentoring)]/50"
-              >
-                <option value="not_invited">Not invited</option>
-                <option value="invited">Invited</option>
-                <option value="accepted">Accepted</option>
-                <option value="expired">Expired</option>
-                <option value="failed">Failed</option>
-              </select>
-            </label>
-          </div>
+              <label className="block">
+                <span className="mb-2 block text-sm text-slate-400">
+                  Invitation status
+                </span>
+                <select
+                  name="invitation_status"
+                  value={form.invitation_status}
+                  onChange={handleChange}
+                  className="w-full rounded-xl border border-white/10 bg-[#090b0f] px-4 py-3 text-sm text-white outline-none transition focus:border-[var(--mentoring)]/50"
+                >
+                  <option value="not_invited">Not invited</option>
+                  <option value="invited">Invited</option>
+                  <option value="accepted">Accepted</option>
+                  <option value="expired">Expired</option>
+                  <option value="failed">Failed</option>
+                </select>
+              </label>
+            </div>
 
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <button
-              type="submit"
-              disabled={saving}
-              className="rounded-full bg-[var(--mentoring)] px-5 py-3 text-sm font-semibold text-[#090b0f] disabled:cursor-not-allowed disabled:opacity-60"
-            >
-              {saving ? 'Saving...' : 'Save client'}
-            </button>
-
-            {!isNewClient && (
+            <div className="mt-8 flex flex-wrap items-center gap-3">
               <button
-                type="button"
-                onClick={handleInvite}
-                disabled={sendingInvite}
-                className="rounded-full border border-white/10 px-5 py-3 text-sm font-semibold text-slate-300 transition hover:border-white/20 hover:text-white disabled:cursor-not-allowed disabled:opacity-60"
+                type="submit"
+                disabled={saving}
+                className="rounded-full bg-[var(--mentoring)] px-5 py-3 text-sm font-semibold text-[#090b0f] disabled:cursor-not-allowed disabled:opacity-60"
               >
-                {sendingInvite ? 'Sending invite...' : 'Send invitation'}
+                {saving ? 'Saving...' : 'Save client'}
               </button>
-            )}
-          </div>
-        </form>}
+
+              {!isNewClient && (
+                <button
+                  type="button"
+                  onClick={handleInvite}
+                  disabled={sendingInvite}
+                  className="rounded-full border border-white/10 px-5 py-3 text-sm font-semibold text-slate-300 transition hover:border-white/20 hover:text-white disabled:cursor-not-allowed disabled:opacity-60"
+                >
+                  {sendingInvite ? 'Sending invite...' : 'Send invitation'}
+                </button>
+              )}
+            </div>
+          </form>
+        )}
 
         {!isNewClient && activeSection === 'goals' && (
           <MentoringPlanManager clientId={clientId} />

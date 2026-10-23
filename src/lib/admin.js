@@ -1,7 +1,7 @@
 import { supabase } from './supabase'
 
 export async function isCurrentUserAdmin(session) {
-    if (!session?.user?.id) {
+    if (!session ? .user ? .id) {
         return false
     }
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import { supabase } from '../lib/supabase'
+import AdminHeader from '../components/admin/AdminHeader'
 import DailyLogForm, {
   numericDailyFields,
   scoreFields,
@@ -209,22 +210,7 @@ function DailyDevelopmentJournal({ userId, selectedDate, onDateChange }) {
 
   return (
     <div className="min-h-screen bg-[#090b0f] text-[#f3f4f6]">
-      <header className="border-b border-white/10">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-6 sm:px-8">
-          <div>
-            <p className="text-xs font-bold uppercase tracking-[.3em] text-[var(--personalDevelopment)]">
-              Admin / Personal development
-            </p>
-            <h1 className="mt-2 text-2xl font-semibold">Journal</h1>
-          </div>
-          <a
-            href="/admin/personal-development/dashboard"
-            className="text-sm text-slate-500 transition hover:text-white"
-          >
-            Back to dashboard
-          </a>
-        </div>
-      </header>
+      <AdminHeader title="Journal" eyebrow="Admin / Personal development" />
 
       <main className="mx-auto max-w-7xl px-5 py-8 sm:px-8 sm:py-12">
         <div className="flex flex-col gap-5 border-b border-white/10 pb-8 sm:flex-row sm:items-end sm:justify-between">

@@ -1,5 +1,6 @@
 import React from 'react'
 import { supabase } from '../lib/supabase'
+import AdminHeader from '../components/admin/AdminHeader'
 import DashboardHeader from '../components/personal-development/dashboard/DashboardHeader'
 import DashboardOverview from '../components/personal-development/dashboard/DashboardOverview'
 import TrendChart from '../components/personal-development/dashboard/TrendChart'
@@ -318,6 +319,7 @@ export default function AdminPersonalDevelopmentDashboardPage() {
 
   return (
     <div className="min-h-screen bg-[#090b0f] text-[#f3f4f6]">
+      <AdminHeader title="Personal development" eyebrow="Admin / Dashboard" />
       <DashboardHeader
         range={range}
         onRangeChange={setRange}

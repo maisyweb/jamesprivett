@@ -1,5 +1,6 @@
 import React from 'react'
 import { supabase } from '../lib/supabase'
+import AdminHeader from '../components/admin/AdminHeader'
 
 export default function ArticleIdeasPage() {
   const [ideas, setIdeas] = React.useState([])
@@ -56,23 +57,7 @@ export default function ArticleIdeasPage() {
 
   return (
     <div className="min-h-screen bg-[#090b0f] text-[#f3f4f6]">
-      <header className="border-b border-white/10">
-        <div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-6 sm:px-8">
-          <div>
-            <p className="text-xs font-bold uppercase tracking-[.3em] text-[var(--personalDevelopment)]">
-              Admin
-            </p>
-            <h1 className="mt-2 text-2xl font-semibold">Article Ideas</h1>
-          </div>
-
-          <a
-            href="/admin"
-            className="text-sm text-slate-500 transition hover:text-white"
-          >
-            ← Back to dashboard
-          </a>
-        </div>
-      </header>
+      <AdminHeader title="Article ideas" eyebrow="Admin / Content planning" />
 
       <main className="mx-auto max-w-5xl px-5 py-12 sm:px-8">
         <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">

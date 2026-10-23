@@ -1,0 +1,2 @@
+[functions.mentoring-invite]
+verify_jwt = false

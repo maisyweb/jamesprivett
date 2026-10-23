@@ -146,7 +146,8 @@ function AdminAccessGate({ children }) {
       <main className="flex min-h-screen flex-col items-center justify-center bg-[#090b0f] px-5 text-center text-[#f3f4f6]">
         <h1 className="text-2xl font-semibold">Admin access required</h1>
         <p className="mt-3 max-w-md text-sm leading-6 text-slate-400">
-          This account is for the client mentoring area and cannot access site administration.
+          This account is for the client mentoring area and cannot access site
+          administration.
         </p>
         <button
           type="button"

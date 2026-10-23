@@ -233,7 +233,11 @@ function AdminDashboard({ session, onSignOut }) {
         title="Dashboard"
         onSignOut={onSignOut}
         showDashboardLink={false}
-        actions={<span className="hidden text-sm text-slate-500 sm:block">{session.user.email}</span>}
+        actions={
+          <span className="hidden text-sm text-slate-500 sm:block">
+            {session.user.email}
+          </span>
+        }
       />
 
       <main className="mx-auto max-w-7xl px-5 py-12 sm:px-8">

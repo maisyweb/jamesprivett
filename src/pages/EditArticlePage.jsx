@@ -1,6 +1,7 @@
 import React from 'react'
 import { supabase } from '../lib/supabase'
 import ArticleEditor from '../components/admin/ArticleEditor'
+import AdminHeader from '../components/admin/AdminHeader'
 
 export default function EditArticlePage({ articleId }) {
   const [article, setArticle] = React.useState(null)
@@ -244,24 +245,7 @@ export default function EditArticlePage({ articleId }) {
 
   return (
     <div className="min-h-screen bg-[#090b0f] text-[#f3f4f6]">
-      <header className="border-b border-white/10">
-        <div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-6 sm:px-8">
-          <div>
-            <p className="text-xs font-bold uppercase tracking-[.3em] text-[var(--personalDevelopment)]">
-              Admin
-            </p>
-
-            <h1 className="mt-2 text-2xl font-semibold">Edit Article</h1>
-          </div>
-
-          <a
-            href="/admin"
-            className="text-sm text-slate-500 transition hover:text-white"
-          >
-            ← Back to dashboard
-          </a>
-        </div>
-      </header>
+      <AdminHeader title="Edit article" eyebrow="Admin / Content" />
 
       <main className="mx-auto max-w-5xl px-5 py-12 sm:px-8">
         <div className="mb-10">
