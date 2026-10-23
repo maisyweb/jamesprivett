@@ -1,5 +1,6 @@
 import React from 'react'
 import { supabase } from '../lib/supabase'
+import AdminHeader from '../components/admin/AdminHeader'
 
 const emptyIdea = {
   title: '',
@@ -97,25 +98,18 @@ export default function ArticleIdeaEditorPage({ ideaId }) {
 
   return (
     <div className="min-h-screen bg-[#090b0f] text-[#f3f4f6]">
-      <header className="border-b border-white/10">
-        <div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-6 sm:px-8">
-          <div>
-            <p className="text-xs font-bold uppercase tracking-[.3em] text-[var(--personalDevelopment)]">
-              Admin
-            </p>
-            <h1 className="mt-2 text-2xl font-semibold">
-              {isEditing ? 'Edit Article Idea' : 'New Article Idea'}
-            </h1>
-          </div>
-
+      <AdminHeader
+        title={isEditing ? 'Edit article idea' : 'New article idea'}
+        eyebrow="Admin / Content planning"
+        actions={
           <a
             href="/admin/article-ideas"
-            className="text-sm text-slate-500 transition hover:text-white"
+            className="rounded-lg border border-white/10 px-3 py-2 text-sm text-slate-400 transition hover:border-white/20 hover:text-white"
           >
-            ← Back to article ideas
+            Ideas
           </a>
-        </div>
-      </header>
+        }
+      />
 
       <main className="mx-auto max-w-5xl px-5 py-12 sm:px-8">
         <div className="mb-10">
