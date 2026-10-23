@@ -1,7 +1,11 @@
 import React, { useEffect } from 'react'
+import { supabase } from './lib/supabase'
+import { isCurrentUserAdmin } from './lib/admin'
 
 import HomePage from './pages/HomePage'
 import MentoringPage from './pages/MentoringPage'
+import MentoringSetupPage from './pages/MentoringSetupPage'
+import MentoringPortalPage from './pages/MentoringPortalPage'
 import PersonalDevelopmentPage from './pages/PersonalDevelopmentPage'
 import CVPage from './pages/CVPage'
 import ArticlePage from './pages/ArticlePage'
@@ -16,6 +20,10 @@ import AdminArticlesPage from './pages/AdminArticlesPage'
 import AdminContactEmailsPage from './pages/AdminContactEmailsPage'
 import AdminPersonalDevelopmentDashboardPage from './pages/AdminPersonalDevelopmentDashboardPage'
 import AdminPersonalDevelopmentJournalPage from './pages/AdminPersonalDevelopmentJournalPage'
+import AdminMentoringPage from './pages/AdminMentoringPage'
+import AdminMentoringClientsPage from './pages/AdminMentoringClientsPage'
+import AdminMentoringClientDetailPage from './pages/AdminMentoringClientDetailPage'
+import AdminDebugPage from './pages/AdminDebugPage'
 import ContactPage from './pages/ContactPage'
 import NotFoundPage from './pages/NotFoundPage'
 import SEO from './components/SEO'
@@ -86,7 +94,75 @@ function renderPage(page, metadata) {
   )
 }
 
-export default function App() {
+function AdminAccessGate({ children }) {
+  const [access, setAccess] = React.useState('checking')
+
+  useEffect(() => {
+    let active = true
+
+    async function checkAccess(session) {
+      if (!session) {
+        if (active) setAccess('signed-out')
+        return
+      }
+
+      const isAdmin = await isCurrentUserAdmin(session)
+      if (active) setAccess(isAdmin ? 'admin' : 'denied')
+    }
+
+    supabase.auth.getSession().then(({ data, error }) => {
+      if (error) {
+        console.error('Failed to load admin session:', error)
+        if (active) setAccess('denied')
+        return
+      }
+      checkAccess(data.session)
+    })
+
+    const { data } = supabase.auth.onAuthStateChange((_event, session) => {
+      checkAccess(session)
+    })
+
+    return () => {
+      active = false
+      data.subscription.unsubscribe()
+    }
+  }, [])
+
+  if (access === 'checking') {
+    return (
+      <main className="flex min-h-screen items-center justify-center bg-[#090b0f] px-5 text-sm text-slate-400">
+        Checking access...
+      </main>
+    )
+  }
+
+  if (access === 'signed-out') {
+    return <AdminPage />
+  }
+
+  if (access === 'denied') {
+    return (
+      <main className="flex min-h-screen flex-col items-center justify-center bg-[#090b0f] px-5 text-center text-[#f3f4f6]">
+        <h1 className="text-2xl font-semibold">Admin access required</h1>
+        <p className="mt-3 max-w-md text-sm leading-6 text-slate-400">
+          This account is for the client mentoring area and cannot access site administration.
+        </p>
+        <button
+          type="button"
+          onClick={() => supabase.auth.signOut()}
+          className="mt-6 rounded-lg border border-white/15 px-4 py-2 text-sm text-slate-300 hover:border-white/30 hover:text-white"
+        >
+          Sign out
+        </button>
+      </main>
+    )
+  }
+
+  return children
+}
+
+function AppRoutes() {
   const path = window.location.pathname
 
   useEffect(() => {
@@ -106,6 +182,14 @@ export default function App() {
 
   if (path === '/mentoring' || path === '/mentoring/') {
     return renderPage(<MentoringPage />, pageMetadata.mentoring)
+  }
+
+  if (path === '/mentoring/setup' || path === '/mentoring/setup/') {
+    return renderPage(<MentoringSetupPage />, { noindex: true })
+  }
+
+  if (path === '/mentoring/portal' || path === '/mentoring/portal/') {
+    return renderPage(<MentoringPortalPage />, { noindex: true })
   }
 
   if (path === '/personal-development' || path === '/personal-development/') {
@@ -175,6 +259,36 @@ export default function App() {
     return renderPage(<AdminContactEmailsPage />, { noindex: true })
   }
 
+  if (path === '/admin/debug' || path === '/admin/debug/') {
+    return renderPage(<AdminDebugPage />, { noindex: true })
+  }
+
+  if (path === '/admin/mentoring' || path === '/admin/mentoring/') {
+    return renderPage(<AdminMentoringPage />, { noindex: true })
+  }
+
+  if (
+    path === '/admin/mentoring/clients' ||
+    path === '/admin/mentoring/clients/'
+  ) {
+    return renderPage(<AdminMentoringClientsPage />, { noindex: true })
+  }
+
+  const clientRoute = path.match(
+    /^\/admin\/mentoring\/clients\/([^/]+)(?:\/(goals|sessions))?\/?$/
+  )
+
+  if (clientRoute) {
+    const [, clientId, section = 'overview'] = clientRoute
+    return renderPage(
+      <AdminMentoringClientDetailPage
+        clientId={clientId}
+        activeSection={section}
+      />,
+      { noindex: true }
+    )
+  }
+
   if (
     path === '/admin/personal-development/dashboard' ||
     path === '/admin/personal-development/dashboard/'
@@ -208,4 +322,16 @@ export default function App() {
     description: "The page you're looking for doesn't exist or may have moved.",
     noindex: true,
   })
+}
+
+export default function App() {
+  if (window.location.pathname.startsWith('/admin')) {
+    return (
+      <AdminAccessGate>
+        <AppRoutes />
+      </AdminAccessGate>
+    )
+  }
+
+  return <AppRoutes />
 }

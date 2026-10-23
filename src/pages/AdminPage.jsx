@@ -1,5 +1,6 @@
 import React from 'react'
 import { supabase } from '../lib/supabase'
+import AdminHeader from '../components/admin/AdminHeader'
 
 export default function AdminPage() {
   const [session, setSession] = React.useState(null)
@@ -228,30 +229,12 @@ function AdminDashboard({ session, onSignOut }) {
 
   return (
     <div className="min-h-screen bg-[#090b0f] text-[#f3f4f6]">
-      <header className="border-b border-white/10">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-6 sm:px-8">
-          <div>
-            <p className="text-xs font-bold uppercase tracking-[.3em] text-[var(--personalDevelopment)]">
-              Admin
-            </p>
-
-            <h1 className="mt-2 text-2xl font-semibold">Dashboard</h1>
-          </div>
-
-          <div className="flex items-center gap-4">
-            <span className="hidden text-sm text-slate-500 sm:block">
-              {session.user.email}
-            </span>
-
-            <button
-              onClick={onSignOut}
-              className="rounded-full border border-white/10 px-4 py-2 text-sm text-slate-400 transition hover:border-white/20 hover:text-white"
-            >
-              Sign out
-            </button>
-          </div>
-        </div>
-      </header>
+      <AdminHeader
+        title="Dashboard"
+        onSignOut={onSignOut}
+        showDashboardLink={false}
+        actions={<span className="hidden text-sm text-slate-500 sm:block">{session.user.email}</span>}
+      />
 
       <main className="mx-auto max-w-7xl px-5 py-12 sm:px-8">
         <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
@@ -277,6 +260,12 @@ function AdminDashboard({ session, onSignOut }) {
               className="rounded-full border border-white/10 px-5 py-3 text-sm font-semibold text-slate-300 transition hover:border-white/20 hover:text-white"
             >
               Contact emails
+            </a>
+            <a
+              href="/admin/mentoring"
+              className="rounded-full border border-[var(--mentoring)]/40 bg-[var(--mentoring)]/10 px-5 py-3 text-sm font-semibold text-[var(--mentoring)] transition hover:border-[var(--mentoring)]/60"
+            >
+              Mentoring portal
             </a>
             <a
               href="/admin/articles/new"
