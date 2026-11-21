@@ -242,7 +242,7 @@ export default function PersonalDevelopmentPage() {
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: "url('/personal-development-graphic.png')",
+              backgroundImage: "url('/personal-development-graphic.webp')",
             }}
           />
 

@@ -261,7 +261,7 @@ export default function ArticlesPage() {
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: "url('/articles-hero.png')",
+              backgroundImage: "url('/articles-hero.webp')",
             }}
           />
 

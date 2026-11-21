@@ -179,7 +179,7 @@ export default function MentoringPage() {
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: "url('/mentoring-compass.png')",
+              backgroundImage: "url('/mentoring-compass.webp')",
             }}
           />
 
