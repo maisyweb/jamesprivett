@@ -1,32 +1,49 @@
-import React, { useEffect } from 'react'
+import React, { Suspense, lazy, useEffect } from 'react'
 import { supabase } from './lib/supabase'
 import { isCurrentUserAdmin } from './lib/admin'
 
 import HomePage from './pages/HomePage'
-import MentoringPage from './pages/MentoringPage'
-import MentoringSetupPage from './pages/MentoringSetupPage'
-import MentoringPortalPage from './pages/MentoringPortalPage'
-import PersonalDevelopmentPage from './pages/PersonalDevelopmentPage'
-import CVPage from './pages/CVPage'
-import ArticlePage from './pages/ArticlePage'
-import AdminPage from './pages/AdminPage'
-import NewArticlePage from './pages/NewArticlePage'
-import EditArticlePage from './pages/EditArticlePage'
-import ArticlesPage from './pages/ArticlesPage'
-import EngineeringPage from './pages/EngineeringPage'
-import ArticleIdeasPage from './pages/ArticleIdeasPage'
-import ArticleIdeaEditorPage from './pages/ArticleIdeaEditorPage'
-import AdminArticlesPage from './pages/AdminArticlesPage'
-import AdminContactEmailsPage from './pages/AdminContactEmailsPage'
-import AdminPersonalDevelopmentDashboardPage from './pages/AdminPersonalDevelopmentDashboardPage'
-import AdminPersonalDevelopmentJournalPage from './pages/AdminPersonalDevelopmentJournalPage'
-import AdminMentoringPage from './pages/AdminMentoringPage'
-import AdminMentoringClientsPage from './pages/AdminMentoringClientsPage'
-import AdminMentoringClientDetailPage from './pages/AdminMentoringClientDetailPage'
-import AdminDebugPage from './pages/AdminDebugPage'
-import ContactPage from './pages/ContactPage'
-import NotFoundPage from './pages/NotFoundPage'
 import SEO from './components/SEO'
+
+// Every page except the homepage loads on demand, so public visitors don't
+// download admin, journal and dashboard code they will never use.
+const MentoringPage = lazy(() => import('./pages/MentoringPage'))
+const MentoringSetupPage = lazy(() => import('./pages/MentoringSetupPage'))
+const MentoringPortalPage = lazy(() => import('./pages/MentoringPortalPage'))
+const PersonalDevelopmentPage = lazy(
+  () => import('./pages/PersonalDevelopmentPage')
+)
+const CVPage = lazy(() => import('./pages/CVPage'))
+const ArticlePage = lazy(() => import('./pages/ArticlePage'))
+const AdminPage = lazy(() => import('./pages/AdminPage'))
+const NewArticlePage = lazy(() => import('./pages/NewArticlePage'))
+const EditArticlePage = lazy(() => import('./pages/EditArticlePage'))
+const ArticlesPage = lazy(() => import('./pages/ArticlesPage'))
+const EngineeringPage = lazy(() => import('./pages/EngineeringPage'))
+const ArticleIdeasPage = lazy(() => import('./pages/ArticleIdeasPage'))
+const ArticleIdeaEditorPage = lazy(
+  () => import('./pages/ArticleIdeaEditorPage')
+)
+const AdminArticlesPage = lazy(() => import('./pages/AdminArticlesPage'))
+const AdminContactEmailsPage = lazy(
+  () => import('./pages/AdminContactEmailsPage')
+)
+const AdminPersonalDevelopmentDashboardPage = lazy(
+  () => import('./pages/AdminPersonalDevelopmentDashboardPage')
+)
+const AdminPersonalDevelopmentJournalPage = lazy(
+  () => import('./pages/AdminPersonalDevelopmentJournalPage')
+)
+const AdminMentoringPage = lazy(() => import('./pages/AdminMentoringPage'))
+const AdminMentoringClientsPage = lazy(
+  () => import('./pages/AdminMentoringClientsPage')
+)
+const AdminMentoringClientDetailPage = lazy(
+  () => import('./pages/AdminMentoringClientDetailPage')
+)
+const AdminDebugPage = lazy(() => import('./pages/AdminDebugPage'))
+const ContactPage = lazy(() => import('./pages/ContactPage'))
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage'))
 
 const siteUrl = 'https://jamesprivett.co.uk'
 
@@ -83,6 +100,10 @@ const pageMetadata = {
       'Get in touch with James Privett about software engineering, mentoring, collaboration or other opportunities.',
     canonical: `${siteUrl}/contact`,
   },
+}
+
+function PageLoading() {
+  return <div className="min-h-screen bg-[#090b0f]" aria-busy="true" />
 }
 
 function renderPage(page, metadata) {
@@ -328,11 +349,17 @@ function AppRoutes() {
 export default function App() {
   if (window.location.pathname.startsWith('/admin')) {
     return (
-      <AdminAccessGate>
-        <AppRoutes />
-      </AdminAccessGate>
+      <Suspense fallback={<PageLoading />}>
+        <AdminAccessGate>
+          <AppRoutes />
+        </AdminAccessGate>
+      </Suspense>
     )
   }
 
-  return <AppRoutes />
+  return (
+    <Suspense fallback={<PageLoading />}>
+      <AppRoutes />
+    </Suspense>
+  )
 }
