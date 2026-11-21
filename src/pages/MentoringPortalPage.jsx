@@ -1,6 +1,9 @@
 import React from 'react'
 import { supabase } from '../lib/supabase'
 import MentoringSessionsPortal from '../components/personal-development/MentoringSessionsPortal'
+import WheelOfLife from '../components/mentoring/WheelOfLife'
+import JustOkayTrap from '../components/mentoring/JustOkayTrap'
+import EisenhowerMatrix from '../components/mentoring/EisenhowerMatrix'
 
 function formatDate(value) {
   if (!value) return 'Not available'
@@ -122,6 +125,7 @@ function ClientLogin({ onSignedIn }) {
 
 export default function MentoringPortalPage() {
   const [loading, setLoading] = React.useState(true)
+  const [activeView, setActiveView] = React.useState('overview')
   const [session, setSession] = React.useState(null)
   const [client, setClient] = React.useState(null)
   const [goals, setGoals] = React.useState([])
@@ -368,7 +372,42 @@ export default function MentoringPortalPage() {
           </div>
         </section>
 
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,1.3fr)_minmax(300px,0.8fr)] lg:gap-12">
+        <nav
+          role="tablist"
+          aria-label="Mentoring portal sections"
+          className="mt-5 flex gap-6 overflow-x-auto border-b border-white/10"
+        >
+          {[
+            ['overview', 'Overview'],
+            ['wheel', 'Wheel of Life'],
+            ['just-okay', 'The “Just Okay” Trap'],
+            ['priorities', 'Priority Matrix'],
+          ].map(([view, label]) => (
+            <button
+              key={view}
+              id={`portal-tab-${view}`}
+              type="button"
+              role="tab"
+              aria-selected={activeView === view}
+              aria-controls={`portal-panel-${view}`}
+              onClick={() => setActiveView(view)}
+              className={`whitespace-nowrap border-b-2 px-1 py-3 text-sm transition ${
+                activeView === view
+                  ? 'border-[var(--mentoring)] font-semibold text-white'
+                  : 'border-transparent text-slate-500 hover:text-slate-200'
+              }`}
+            >
+              {label}
+            </button>
+          ))}
+        </nav>
+
+        <div
+          id="portal-panel-overview"
+          role="tabpanel"
+          aria-labelledby="portal-tab-overview"
+          className={`${activeView === 'overview' ? 'block' : 'hidden'} grid gap-8 lg:grid-cols-[minmax(0,1.3fr)_minmax(300px,0.8fr)] lg:gap-12`}
+        >
           <section className="min-w-0 py-7">
             <div className="flex flex-wrap items-end justify-between gap-3">
               <div>
@@ -480,6 +519,33 @@ export default function MentoringPortalPage() {
 
           <MentoringSessionsPortal clientId={client.id} />
         </div>
+
+        <section
+          id="portal-panel-wheel"
+          role="tabpanel"
+          aria-labelledby="portal-tab-wheel"
+          className={activeView === 'wheel' ? 'block' : 'hidden'}
+        >
+          <WheelOfLife />
+        </section>
+
+        <section
+          id="portal-panel-just-okay"
+          role="tabpanel"
+          aria-labelledby="portal-tab-just-okay"
+          className={activeView === 'just-okay' ? 'block' : 'hidden'}
+        >
+          <JustOkayTrap />
+        </section>
+
+        <section
+          id="portal-panel-priorities"
+          role="tabpanel"
+          aria-labelledby="portal-tab-priorities"
+          className={activeView === 'priorities' ? 'block' : 'hidden'}
+        >
+          <EisenhowerMatrix />
+        </section>
 
         <section className="mt-2 flex flex-wrap items-center justify-between gap-2 border-t border-white/10 pt-4 text-xs text-slate-500">
           <p>
