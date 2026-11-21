@@ -5,7 +5,7 @@ const DEFAULT_TITLE =
   'James Privett — Software Engineer, Mentor & Lifelong Learner'
 const DEFAULT_DESCRIPTION =
   'Software engineer, mentor and lifelong learner sharing ideas about software, leadership, mentoring and personal development.'
-const DEFAULT_IMAGE = `${SITE_URL}/james.jpg`
+const DEFAULT_IMAGE = `${SITE_URL}/og-image.jpg`
 
 function setMeta(attribute, key, content) {
   let element = document.head.querySelector(`meta[${attribute}="${key}"]`)

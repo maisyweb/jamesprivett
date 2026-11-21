@@ -6,7 +6,7 @@ export default function MiniStat({ value, label }) {
       <div className="text-lg font-semibold text-[var(--personalDevelopment)]">
         {value}
       </div>
-      <div className="mt-1 text-[10px] uppercase tracking-[.15em] text-slate-500">
+      <div className="mt-1 text-[10px] uppercase tracking-[.15em] text-subtle">
         {label}
       </div>
     </div>

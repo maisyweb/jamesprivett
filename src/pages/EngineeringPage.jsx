@@ -119,7 +119,7 @@ export default function EngineeringPage() {
     <div className="min-h-screen bg-[#080b10] text-slate-100">
       <Header compact />
 
-      <main>
+      <main id="main-content">
         {/* Hero */}
         <section className="relative isolate overflow-hidden border-b border-white/10 pt-28 sm:pt-32">
           <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_72%_35%,rgba(96,165,250,.12),transparent_32%)]" />
@@ -215,7 +215,7 @@ export default function EngineeringPage() {
                   Interfaces people actually use.
                 </h3>
 
-                <p className="mt-3 text-sm leading-7 text-slate-500">
+                <p className="mt-3 text-sm leading-7 text-subtle">
                   JavaScript, React, HTML and CSS, with a focus on building
                   interfaces that are useful rather than simply impressive.
                 </p>
@@ -228,7 +228,7 @@ export default function EngineeringPage() {
                   Systems behind the interface.
                 </h3>
 
-                <p className="mt-3 text-sm leading-7 text-slate-500">
+                <p className="mt-3 text-sm leading-7 text-subtle">
                   APIs, business logic, databases and the less visible work that
                   makes an application reliable.
                 </p>
@@ -243,7 +243,7 @@ export default function EngineeringPage() {
                   Understand the problem first.
                 </h3>
 
-                <p className="mt-3 text-sm leading-7 text-slate-500">
+                <p className="mt-3 text-sm leading-7 text-subtle">
                   The interesting part of engineering isn't always writing the
                   code. Often it's figuring out what actually needs to be
                   solved.
@@ -259,7 +259,7 @@ export default function EngineeringPage() {
                   Build the people too.
                 </h3>
 
-                <p className="mt-3 text-sm leading-7 text-slate-500">
+                <p className="mt-3 text-sm leading-7 text-subtle">
                   I've built teams, mentored engineers, supported career
                   development and helped people grow into leadership roles.
                 </p>
@@ -356,14 +356,14 @@ export default function EngineeringPage() {
 
               <a
                 href="/articles?section=Engineering"
-                className="w-fit text-sm font-semibold text-slate-500 transition hover:text-white"
+                className="w-fit text-sm font-semibold text-subtle transition hover:text-white"
               >
                 View all Engineering articles →
               </a>
             </div>
 
             {loadingArticles && (
-              <div className="mt-12 rounded-2xl border border-white/10 bg-white/[0.02] p-10 text-center text-sm text-slate-500">
+              <div className="mt-12 rounded-2xl border border-white/10 bg-white/[0.02] p-10 text-center text-sm text-subtle">
                 Loading engineering articles...
               </div>
             )}
@@ -401,7 +401,7 @@ export default function EngineeringPage() {
                     className={featuredArticles.length > 0 ? 'mt-16' : 'mt-12'}
                   >
                     <div className="mb-5">
-                      <p className="text-xs font-bold uppercase tracking-[.25em] text-slate-500">
+                      <p className="text-xs font-bold uppercase tracking-[.25em] text-subtle">
                         Latest
                       </p>
                     </div>
@@ -420,7 +420,7 @@ export default function EngineeringPage() {
 
                 {featuredArticles.length === 0 &&
                   latestArticles.length === 0 && (
-                    <div className="mt-12 rounded-2xl border border-white/10 bg-white/[0.02] p-10 text-center text-sm text-slate-500">
+                    <div className="mt-12 rounded-2xl border border-white/10 bg-white/[0.02] p-10 text-center text-sm text-subtle">
                       No engineering articles published yet.
                     </div>
                   )}

@@ -54,7 +54,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#090b0f] text-[#f3f4f6]">
       <Header />
-      <main id="top">
+      <main id="main-content">
         <section className="relative isolate flex min-h-[760px] items-center overflow-hidden border-b border-white/10 pt-20">
           <div className="grid-bg absolute inset-0 -z-20" />
           <div className="hero-glow absolute inset-0 -z-10" />
@@ -102,8 +102,11 @@ export default function HomePage() {
               <div className="absolute -inset-8 -z-10 bg-[radial-gradient(circle,rgba(77,163,255,.18),transparent_58%)]" />
               <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-white/10 bg-[#11161c] shadow-2xl shadow-black/40 sm:aspect-[5/6]">
                 <img
-                  src="/james-glow.png"
+                  src="/james-glow.webp"
                   alt="James Privett"
+                  width="1230"
+                  height="1278"
+                  fetchPriority="high"
                   className="portrait h-full w-full object-cover"
                 />
                 <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#090b0f] via-[#090b0f]/45 to-transparent" />

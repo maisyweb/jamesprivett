@@ -1,4 +1,19 @@
 @import 'tailwindcss';
+
+/* Secondary text colour for the public site. Lighter than slate-500 so small
+   text keeps at least 4.5:1 contrast (WCAG AA) on the page and card surfaces. */
+@theme {
+  --color-subtle: #808ca0;
+}
+
+/* A visible keyboard focus ring everywhere. It sits in the base layer so
+   components with their own focus styles (e.g. form fields) still win. */
+@layer base {
+  :focus-visible {
+    outline: 2px solid var(--engineering);
+    outline-offset: 3px;
+  }
+}
 :root {
   --bg: #090b0f;
   --surface: #10141a;

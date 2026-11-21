@@ -72,8 +72,11 @@ export default function ArticlePage({ slug }) {
         />
         <Header />
 
-        <main className="mx-auto max-w-4xl px-6 py-24 text-center sm:px-8">
-          <p className="text-slate-500">Loading article...</p>
+        <main
+          id="main-content"
+          className="mx-auto max-w-4xl px-6 py-24 text-center sm:px-8"
+        >
+          <p className="text-subtle">Loading article...</p>
         </main>
       </div>
     )
@@ -89,7 +92,10 @@ export default function ArticlePage({ slug }) {
         />
         <Header />
 
-        <main className="relative isolate flex flex-1 items-center overflow-hidden pt-20">
+        <main
+          id="main-content"
+          className="relative isolate flex flex-1 items-center overflow-hidden pt-20"
+        >
           <div className="grid-bg absolute inset-0 -z-20" />
           <div className="hero-glow absolute inset-0 -z-10" />
 
@@ -147,7 +153,7 @@ export default function ArticlePage({ slug }) {
         ? 'text-purple-400'
         : article.section === 'Personal Development'
           ? 'text-amber-400'
-          : 'text-slate-500'
+          : 'text-subtle'
 
   const canonical = `${siteUrl}/articles/${encodeURIComponent(article.slug)}`
   const articleSchema = {
@@ -178,7 +184,7 @@ export default function ArticlePage({ slug }) {
       />
       <Header />
 
-      <main>
+      <main id="main-content">
         <article>
           {/* Introduction */}
           <header className="mx-auto max-w-5xl px-6 pb-12 pt-16 sm:px-8 sm:pb-16 sm:pt-24">
@@ -201,7 +207,7 @@ export default function ArticlePage({ slug }) {
                 </p>
               )}
 
-              <div className="mt-7 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <div className="mt-7 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-subtle">
                 {article.category && <span>{article.category}</span>}
 
                 {article.category && article.reading_time && <span>·</span>}
@@ -245,7 +251,7 @@ export default function ArticlePage({ slug }) {
                   {tags.map((tag) => (
                     <span
                       key={tag.id}
-                      className="rounded-full bg-white/[0.05] px-4 py-2 text-sm text-slate-500"
+                      className="rounded-full bg-white/[0.05] px-4 py-2 text-sm text-subtle"
                     >
                       {tag.name}
                     </span>
@@ -255,7 +261,7 @@ export default function ArticlePage({ slug }) {
 
               <a
                 href="/articles"
-                className="mt-8 inline-block text-sm font-semibold text-slate-500 transition hover:text-white"
+                className="mt-8 inline-block text-sm font-semibold text-subtle transition hover:text-white"
               >
                 ← Back to all articles
               </a>

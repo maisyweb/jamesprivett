@@ -103,7 +103,10 @@ export default function CVPage() {
   return (
     <div className="min-h-screen bg-[#090b0f] text-[#f3f4f6]">
       <Header compact />
-      <main className="mx-auto max-w-7xl px-5 pb-20 pt-32 sm:px-8">
+      <main
+        id="main-content"
+        className="mx-auto max-w-7xl px-5 pb-20 pt-32 sm:px-8"
+      >
         <section className="border-b border-white/10 pb-10">
           <div className="flex flex-col gap-7 sm:flex-row sm:items-end sm:justify-between">
             <div>
@@ -156,7 +159,7 @@ export default function CVPage() {
                       {role.company}
                     </span>
                   </div>
-                  <p className="mt-1 text-xs uppercase tracking-[.18em] text-slate-500">
+                  <p className="mt-1 text-xs uppercase tracking-[.18em] text-subtle">
                     {role.dates} · {role.location}
                   </p>
                   <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-400">
@@ -246,7 +249,7 @@ export default function CVPage() {
         </section>
 
         <div className="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-8">
-          <p className="text-sm text-slate-500">Full CV available as a PDF.</p>
+          <p className="text-sm text-subtle">Full CV available as a PDF.</p>
           <a
             className="rounded-full border border-[var(--engineering)]/30 px-5 py-3 text-sm font-semibold text-[var(--engineering)] transition hover:bg-[var(--engineering)]/10"
             href="/James-Privett-CV.pdf"
