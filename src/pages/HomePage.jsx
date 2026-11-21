@@ -158,7 +158,7 @@ export default function HomePage() {
             copy="A personal experiment in consistency, strength and self-improvement."
             body="A long-term project to track the work, learn what works and keep improving."
             link="Follow the journey"
-            href="/personalDevelopment"
+            href="/personal-development"
           />
         </section>
 
