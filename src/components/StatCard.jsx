@@ -6,7 +6,7 @@ export default function StatCard({ value, label }) {
       <div className="text-3xl font-semibold tracking-tight text-[var(--engineering)]">
         {value}
       </div>
-      <div className="mt-2 text-sm leading-5 text-slate-500">{label}</div>
+      <div className="mt-2 text-sm leading-5 text-subtle">{label}</div>
     </div>
   )
 }

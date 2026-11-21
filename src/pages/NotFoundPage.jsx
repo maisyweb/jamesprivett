@@ -7,7 +7,10 @@ export default function NotFoundPage() {
   return (
     <div className="flex min-h-screen flex-col overflow-hidden bg-[#090b0f] text-[#f3f4f6]">
       <Header />
-      <main className="relative isolate flex flex-1 items-center overflow-hidden pt-20">
+      <main
+        id="main-content"
+        className="relative isolate flex flex-1 items-center overflow-hidden pt-20"
+      >
         <div className="grid-bg absolute inset-0 -z-20" />
         <div className="hero-glow absolute inset-0 -z-10" />
 

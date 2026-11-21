@@ -18,7 +18,7 @@ export default function ArticleCard({
           {article.category}
         </span>
 
-        <span className="text-xs text-slate-600">{article.read}</span>
+        <span className="text-xs text-subtle">{article.read}</span>
       </div>
 
       <h3
@@ -40,7 +40,7 @@ export default function ArticleCard({
         {article.tags.map((tag) => (
           <span
             key={tag}
-            className="rounded-full border border-white/10 bg-white/[.02] px-2.5 py-1 text-[11px] text-slate-500"
+            className="rounded-full border border-white/10 bg-white/[.02] px-2.5 py-1 text-[11px] text-subtle"
           >
             #{tag}
           </span>

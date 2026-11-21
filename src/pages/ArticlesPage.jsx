@@ -85,7 +85,7 @@ function ArticleImage({ article, featured = false }) {
 
 function ArticleMeta({ article }) {
   return (
-    <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+    <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-subtle">
       {article.reading_time && <span>{article.reading_time} min read</span>}
 
       {article.reading_time && article.published_at && <span>·</span>}
@@ -115,7 +115,7 @@ function ArticleSectionLabel({ article }) {
       {article.category && (
         <>
           <span className="text-slate-700">·</span>
-          <span className="text-slate-600">{article.category}</span>
+          <span className="text-subtle">{article.category}</span>
         </>
       )}
     </div>
@@ -134,7 +134,7 @@ function ArticleTags({ article }) {
           relation.tags && (
             <span
               key={relation.tags.id}
-              className="rounded-full bg-white/[0.05] px-3 py-1 text-xs text-slate-500"
+              className="rounded-full bg-white/[0.05] px-3 py-1 text-xs text-subtle"
             >
               {relation.tags.name}
             </span>
@@ -255,7 +255,7 @@ export default function ArticlesPage() {
     <div className="min-h-screen bg-[#080b10] text-slate-100">
       <Header />
 
-      <main>
+      <main id="main-content">
         {/* Hero */}
         <section className="relative overflow-hidden border-b border-white/10">
           <div
@@ -305,7 +305,7 @@ export default function ArticlesPage() {
                       key={section}
                       type="button"
                       onClick={() => setSelectedSection(section)}
-                      className="rounded-full px-5 py-2.5 text-sm font-semibold text-slate-500 transition hover:text-white"
+                      className="rounded-full px-5 py-2.5 text-sm font-semibold text-subtle transition hover:text-white"
                       style={{
                         border: selected
                           ? '2px solid var(--articles)'
@@ -331,7 +331,7 @@ export default function ArticlesPage() {
                   <button
                     type="button"
                     onClick={() => setSelectedTag('All topics')}
-                    className="rounded-full px-5 py-2.5 text-sm font-semibold text-slate-500 transition hover:text-white"
+                    className="rounded-full px-5 py-2.5 text-sm font-semibold text-subtle transition hover:text-white"
                     style={{
                       border:
                         selectedTag === 'All topics'
@@ -354,7 +354,7 @@ export default function ArticlesPage() {
                         key={tag.id}
                         type="button"
                         onClick={() => setSelectedTag(tag.name)}
-                        className="rounded-full px-5 py-2.5 text-sm font-semibold text-slate-500 transition hover:text-white"
+                        className="rounded-full px-5 py-2.5 text-sm font-semibold text-subtle transition hover:text-white"
                         style={{
                           border: selected
                             ? '2px solid var(--articles)'
@@ -373,7 +373,7 @@ export default function ArticlesPage() {
             {/* Active filter summary */}
             {!loading && !error && (
               <div className="mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
-                <p className="text-sm text-slate-500">
+                <p className="text-sm text-subtle">
                   <span className="font-semibold text-slate-300">
                     {filteredArticles.length}
                   </span>{' '}
@@ -404,7 +404,7 @@ export default function ArticlesPage() {
 
             {/* Loading */}
             {loading && (
-              <div className="py-20 text-center text-slate-500">
+              <div className="py-20 text-center text-subtle">
                 Loading articles...
               </div>
             )}
@@ -421,7 +421,7 @@ export default function ArticlesPage() {
                   No articles found.
                 </p>
 
-                <p className="mt-3 text-sm text-slate-500">
+                <p className="mt-3 text-sm text-subtle">
                   There aren&apos;t any published articles matching these
                   filters yet.
                 </p>
@@ -501,7 +501,7 @@ export default function ArticlesPage() {
                     </h2>
                   </div>
 
-                  <span className="hidden text-sm text-slate-600 sm:block">
+                  <span className="hidden text-sm text-subtle sm:block">
                     {remainingArticles.length}{' '}
                     {remainingArticles.length === 1 ? 'article' : 'articles'}
                   </span>

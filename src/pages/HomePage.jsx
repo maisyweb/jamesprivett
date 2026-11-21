@@ -54,7 +54,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#090b0f] text-[#f3f4f6]">
       <Header />
-      <main id="top">
+      <main id="main-content">
         <section className="relative isolate flex min-h-[760px] items-center overflow-hidden border-b border-white/10 pt-20">
           <div className="grid-bg absolute inset-0 -z-20" />
           <div className="hero-glow absolute inset-0 -z-10" />

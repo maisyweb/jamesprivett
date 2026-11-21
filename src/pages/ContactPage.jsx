@@ -95,7 +95,7 @@ export default function ContactPage() {
     <div className="min-h-screen bg-[#090b0f] text-[#f3f4f6]">
       <Header compact />
 
-      <main className="pt-20">
+      <main id="main-content" className="pt-20">
         <section className="relative overflow-hidden border-b border-white/10">
           <div
             className="absolute inset-0 bg-cover bg-center"
@@ -141,7 +141,7 @@ export default function ContactPage() {
               </p>
 
               <div className="mt-10 border-t border-white/10 pt-6">
-                <p className="text-xs font-bold uppercase tracking-[.25em] text-slate-600">
+                <p className="text-xs font-bold uppercase tracking-[.25em] text-subtle">
                   Prefer email?
                 </p>
                 <a
@@ -174,7 +174,7 @@ export default function ContactPage() {
                     maxLength={120}
                     required
                     autoComplete="name"
-                    className="mt-2 w-full rounded-xl border border-white/10 bg-[#090b0f] px-4 py-3 text-base text-white outline-none transition placeholder:text-slate-600 focus:border-[var(--engineering)]/60"
+                    className="mt-2 w-full rounded-xl border border-white/10 bg-[#090b0f] px-4 py-3 text-base text-white outline-none transition placeholder:text-subtle focus:border-[var(--engineering)]/60"
                   />
                 </div>
 
@@ -194,7 +194,7 @@ export default function ContactPage() {
                     maxLength={254}
                     required
                     autoComplete="email"
-                    className="mt-2 w-full rounded-xl border border-white/10 bg-[#090b0f] px-4 py-3 text-base text-white outline-none transition placeholder:text-slate-600 focus:border-[var(--engineering)]/60"
+                    className="mt-2 w-full rounded-xl border border-white/10 bg-[#090b0f] px-4 py-3 text-base text-white outline-none transition placeholder:text-subtle focus:border-[var(--engineering)]/60"
                   />
                 </div>
               </div>
@@ -214,7 +214,7 @@ export default function ContactPage() {
                   onChange={handleChange}
                   maxLength={200}
                   required
-                  className="mt-2 w-full rounded-xl border border-white/10 bg-[#090b0f] px-4 py-3 text-base text-white outline-none transition placeholder:text-slate-600 focus:border-[var(--engineering)]/60"
+                  className="mt-2 w-full rounded-xl border border-white/10 bg-[#090b0f] px-4 py-3 text-base text-white outline-none transition placeholder:text-subtle focus:border-[var(--engineering)]/60"
                 />
               </div>
 
@@ -233,7 +233,7 @@ export default function ContactPage() {
                   maxLength={10000}
                   required
                   rows="7"
-                  className="mt-2 w-full resize-y rounded-xl border border-white/10 bg-[#090b0f] px-4 py-3 text-base text-white outline-none transition placeholder:text-slate-600 focus:border-[var(--engineering)]/60"
+                  className="mt-2 w-full resize-y rounded-xl border border-white/10 bg-[#090b0f] px-4 py-3 text-base text-white outline-none transition placeholder:text-subtle focus:border-[var(--engineering)]/60"
                 />
               </div>
 

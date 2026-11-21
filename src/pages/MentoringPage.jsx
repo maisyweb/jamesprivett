@@ -172,7 +172,7 @@ export default function MentoringPage() {
     <div className="min-h-screen bg-[#080b10] text-slate-100">
       <Header />
 
-      <main>
+      <main id="main-content">
         {/* Hero */}
         <section className="relative overflow-hidden border-b border-white/10">
           {/* Compass artwork */}
@@ -415,7 +415,7 @@ export default function MentoringPage() {
 
               <a
                 href="/articles?section=Mentoring"
-                className="w-fit text-sm font-semibold text-slate-500 transition hover:text-white"
+                className="w-fit text-sm font-semibold text-subtle transition hover:text-white"
               >
                 View all Mentoring articles →
               </a>
@@ -423,7 +423,7 @@ export default function MentoringPage() {
 
             {/* Loading */}
             {loadingArticles && (
-              <div className="mt-12 py-16 text-center text-sm text-slate-500">
+              <div className="mt-12 py-16 text-center text-sm text-subtle">
                 Loading articles...
               </div>
             )}
@@ -438,7 +438,7 @@ export default function MentoringPage() {
             {/* Empty */}
             {!loadingArticles && !articlesError && totalArticles === 0 && (
               <div className="mt-12 rounded-3xl border border-white/10 bg-[#0e1218] p-10 text-center">
-                <p className="text-slate-500">
+                <p className="text-subtle">
                   No published Mentoring articles yet.
                 </p>
 
@@ -457,7 +457,7 @@ export default function MentoringPage() {
               featuredArticles.length > 0 && (
                 <div className="mt-12">
                   <div className="mb-5 flex items-center justify-between">
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-600">
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-subtle">
                       Featured
                     </p>
                   </div>
@@ -481,7 +481,7 @@ export default function MentoringPage() {
                 <div className="mt-16">
                   <div className="flex items-end justify-between">
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-600">
+                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-subtle">
                         Latest
                       </p>
 
@@ -490,7 +490,7 @@ export default function MentoringPage() {
                       </h3>
                     </div>
 
-                    <span className="hidden text-sm text-slate-600 sm:block">
+                    <span className="hidden text-sm text-subtle sm:block">
                       {totalArticles}{' '}
                       {totalArticles === 1 ? 'article' : 'articles'}
                     </span>
@@ -509,7 +509,7 @@ export default function MentoringPage() {
               )}
 
             {!loadingArticles && !articlesError && totalArticles > 0 && (
-              <div className="mt-8 text-sm text-slate-600 sm:hidden">
+              <div className="mt-8 text-sm text-subtle sm:hidden">
                 Showing {totalArticles}{' '}
                 {totalArticles === 1 ? 'article' : 'articles'}
               </div>

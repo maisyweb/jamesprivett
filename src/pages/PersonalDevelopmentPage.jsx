@@ -235,7 +235,7 @@ export default function PersonalDevelopmentPage() {
     <div className="min-h-screen bg-[#090b0f] text-[#f3f4f6]">
       <Header compact />
 
-      <main>
+      <main id="main-content">
         {/* Hero */}
         <section className="relative overflow-hidden border-b border-white/10">
           {/* Personal development artwork */}
@@ -330,10 +330,10 @@ export default function PersonalDevelopmentPage() {
                   >
                     <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-[var(--personalDevelopment)]/0 via-[var(--personalDevelopment)]/60 to-[var(--personalDevelopment)]/0 opacity-60" />
                     <div className="flex items-start justify-between gap-3">
-                      <p className="text-xs font-bold uppercase tracking-[.18em] text-slate-500">
+                      <p className="text-xs font-bold uppercase tracking-[.18em] text-subtle">
                         {label}
                       </p>
-                      <span className="rounded-full bg-white/[0.05] px-2 py-1 text-[10px] uppercase tracking-[.12em] text-slate-600">
+                      <span className="rounded-full bg-white/[0.05] px-2 py-1 text-[10px] uppercase tracking-[.12em] text-subtle">
                         {category}
                       </span>
                     </div>
@@ -344,7 +344,7 @@ export default function PersonalDevelopmentPage() {
                           ? `${formatMetricValue(value)} / ${formatMetricValue(metric.target)}`
                           : formatMetricValue(value)}
                     </p>
-                    <div className="mt-4 flex items-center justify-between text-xs text-slate-600">
+                    <div className="mt-4 flex items-center justify-between text-xs text-subtle">
                       <span>{metric?.unit || unit}</span>
                       <span>
                         {metric?.target
@@ -393,14 +393,14 @@ export default function PersonalDevelopmentPage() {
               <div className="rounded-2xl border border-white/10 bg-[#10161c] p-6 sm:p-7">
                 <div className="flex items-start justify-between gap-6">
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-[.2em] text-slate-600">
+                    <p className="text-xs font-bold uppercase tracking-[.2em] text-subtle">
                       Long view
                     </p>
                     <h3 className="mt-2 text-xl font-semibold">
                       The shape of the year so far
                     </h3>
                   </div>
-                  <span className="text-xs text-slate-600">
+                  <span className="text-xs text-subtle">
                     {moodLoading
                       ? 'Loading mood'
                       : `${moodEntries.length} months logged`}
@@ -414,7 +414,7 @@ export default function PersonalDevelopmentPage() {
                 )}
 
                 <div className="mt-8 grid grid-cols-[auto_1fr] gap-4">
-                  <div className="flex h-56 flex-col justify-between text-[10px] text-slate-600">
+                  <div className="flex h-56 flex-col justify-between text-[10px] text-subtle">
                     {[7, 6, 5, 4, 3, 2, 1].map((score) => (
                       <span key={score}>{score}</span>
                     ))}
@@ -465,7 +465,7 @@ export default function PersonalDevelopmentPage() {
                                 </p>
                               </div>
                             )}
-                            <span className="text-[10px] text-slate-600">
+                            <span className="text-[10px] text-subtle">
                               {month}
                             </span>
                           </div>
@@ -475,7 +475,7 @@ export default function PersonalDevelopmentPage() {
                   </div>
                 </div>
 
-                <div className="mt-6 flex flex-wrap gap-x-4 gap-y-2 text-xs text-slate-500">
+                <div className="mt-6 flex flex-wrap gap-x-4 gap-y-2 text-xs text-subtle">
                   {moodScale.map(([score, label]) => (
                     <span key={score}>
                       <strong className="font-semibold text-[var(--personalDevelopment)]">
@@ -486,7 +486,7 @@ export default function PersonalDevelopmentPage() {
                   ))}
                 </div>
 
-                <p className="mt-4 text-sm leading-6 text-slate-500">
+                <p className="mt-4 text-sm leading-6 text-subtle">
                   One monthly score, from 1 to 7. It is a deliberately simple
                   check-in rather than a diagnosis or a demand to feel good all
                   the time.
@@ -589,14 +589,14 @@ export default function PersonalDevelopmentPage() {
 
               <a
                 href="/articles"
-                className="w-fit text-sm font-semibold text-slate-500 transition hover:text-white"
+                className="w-fit text-sm font-semibold text-subtle transition hover:text-white"
               >
                 View all articles →
               </a>
             </div>
 
             {loading && (
-              <div className="mt-12 rounded-2xl border border-white/10 bg-[#0e1218] p-10 text-center text-sm text-slate-500">
+              <div className="mt-12 rounded-2xl border border-white/10 bg-[#0e1218] p-10 text-center text-sm text-subtle">
                 Loading the journal...
               </div>
             )}
@@ -608,7 +608,7 @@ export default function PersonalDevelopmentPage() {
             )}
 
             {!loading && !error && totalArticles === 0 && (
-              <div className="mt-12 rounded-2xl border border-white/10 bg-[#0e1218] p-10 text-center text-sm text-slate-500">
+              <div className="mt-12 rounded-2xl border border-white/10 bg-[#0e1218] p-10 text-center text-sm text-subtle">
                 No published articles in this section yet.
               </div>
             )}
@@ -642,7 +642,7 @@ export default function PersonalDevelopmentPage() {
                     className={featuredArticles.length > 0 ? 'mt-16' : 'mt-12'}
                   >
                     <div className="mb-5">
-                      <p className="text-xs font-bold uppercase tracking-[.25em] text-slate-500">
+                      <p className="text-xs font-bold uppercase tracking-[.25em] text-subtle">
                         Latest
                       </p>
                     </div>
@@ -660,7 +660,7 @@ export default function PersonalDevelopmentPage() {
                 )}
 
                 <div className="mt-8">
-                  <p className="text-xs text-slate-600">
+                  <p className="text-xs text-subtle">
                     Showing {totalArticles} articles
                   </p>
                 </div>
