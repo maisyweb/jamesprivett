@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '../components/Header'
 import { supabase } from '../lib/supabase'
+import { isStaticDataMode, getStaticArticles } from '../lib/staticData'
 import SiteFooter from '../components/SiteFooter'
 
 const sections = [
@@ -168,10 +169,12 @@ export default function ArticlesPage() {
       setLoading(true)
       setError(null)
 
-      const { data, error: articlesError } = await supabase
-        .from('articles')
-        .select(
-          `
+      const { data, error: articlesError } = isStaticDataMode
+        ? await getStaticArticles()
+        : await supabase
+            .from('articles')
+            .select(
+              `
           id,
           title,
           slug,
@@ -189,9 +192,9 @@ export default function ArticlesPage() {
             )
           )
         `
-        )
-        .eq('status', 'published')
-        .order('published_at', { ascending: false })
+            )
+            .eq('status', 'published')
+            .order('published_at', { ascending: false })
 
       if (articlesError) {
         console.error('Failed to load articles:', articlesError)

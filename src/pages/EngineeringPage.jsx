@@ -4,6 +4,7 @@ import SectionHeading from '../components/SectionHeading'
 import MiniStat from '../components/MiniStat'
 import ArticleCard from '../components/ArticleCard'
 import { supabase } from '../lib/supabase'
+import { isStaticDataMode, getStaticArticles } from '../lib/staticData'
 import SiteFooter from '../components/SiteFooter'
 
 export default function EngineeringPage() {
@@ -18,10 +19,16 @@ export default function EngineeringPage() {
       setArticlesError(null)
 
       const [featuredResult, latestResult] = await Promise.all([
-        supabase
-          .from('articles')
-          .select(
-            `
+        isStaticDataMode
+          ? getStaticArticles({
+              section: 'Engineering',
+              featured: true,
+              limit: 3,
+            })
+          : supabase
+              .from('articles')
+              .select(
+                `
           id,
           title,
           slug,
@@ -39,17 +46,19 @@ export default function EngineeringPage() {
             )
           )
         `
-          )
-          .eq('status', 'published')
-          .eq('section', 'Engineering')
-          .eq('featured', true)
-          .order('published_at', { ascending: false })
-          .limit(3),
+              )
+              .eq('status', 'published')
+              .eq('section', 'Engineering')
+              .eq('featured', true)
+              .order('published_at', { ascending: false })
+              .limit(3),
 
-        supabase
-          .from('articles')
-          .select(
-            `
+        isStaticDataMode
+          ? getStaticArticles({ section: 'Engineering', limit: 9 })
+          : supabase
+              .from('articles')
+              .select(
+                `
           id,
           title,
           slug,
@@ -67,11 +76,11 @@ export default function EngineeringPage() {
             )
           )
         `
-          )
-          .eq('status', 'published')
-          .eq('section', 'Engineering')
-          .order('published_at', { ascending: false })
-          .limit(9),
+              )
+              .eq('status', 'published')
+              .eq('section', 'Engineering')
+              .order('published_at', { ascending: false })
+              .limit(9),
       ])
 
       if (featuredResult.error || latestResult.error) {

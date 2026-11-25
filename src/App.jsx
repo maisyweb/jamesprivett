@@ -1,6 +1,7 @@
 import React, { Suspense, lazy, useEffect } from 'react'
 import { supabase } from './lib/supabase'
 import { isCurrentUserAdmin } from './lib/admin'
+import { isStaticDataMode } from './lib/staticData'
 
 import HomePage from './pages/HomePage'
 import SEO from './components/SEO'
@@ -44,6 +45,9 @@ const AdminMentoringClientDetailPage = lazy(
 const AdminDebugPage = lazy(() => import('./pages/AdminDebugPage'))
 const ContactPage = lazy(() => import('./pages/ContactPage'))
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'))
+const TemporarilyUnavailablePage = lazy(
+  () => import('./pages/TemporarilyUnavailablePage')
+)
 
 const siteUrl = 'https://jamesprivett.co.uk'
 
@@ -346,7 +350,27 @@ function AppRoutes() {
   })
 }
 
+// Areas that need Supabase sign-in, switched off in static data mode.
+function isSignInArea(path) {
+  return (
+    path.startsWith('/admin') ||
+    path.startsWith('/mentoring/portal') ||
+    path.startsWith('/mentoring/setup')
+  )
+}
+
 export default function App() {
+  if (isStaticDataMode && isSignInArea(window.location.pathname)) {
+    return (
+      <Suspense fallback={<PageLoading />}>
+        {renderPage(<TemporarilyUnavailablePage />, {
+          title: 'Temporarily unavailable — James Privett',
+          noindex: true,
+        })}
+      </Suspense>
+    )
+  }
+
   if (window.location.pathname.startsWith('/admin')) {
     return (
       <Suspense fallback={<PageLoading />}>
