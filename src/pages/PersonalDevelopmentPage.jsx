@@ -1,5 +1,11 @@
 import React from 'react'
 import { supabase } from '../lib/supabase'
+import {
+  isStaticDataMode,
+  getStaticArticles,
+  getStaticPersonalMetrics,
+  getStaticPersonalMood,
+} from '../lib/staticData'
 import ArticleCard from '../components/ArticleCard'
 import Header from '../components/Header'
 import SectionHeading from '../components/SectionHeading'
@@ -24,10 +30,16 @@ export default function PersonalDevelopmentPage() {
       setError(null)
 
       const [featuredResult, latestResult] = await Promise.all([
-        supabase
-          .from('articles')
-          .select(
-            `
+        isStaticDataMode
+          ? getStaticArticles({
+              section: 'Personal Development',
+              featured: true,
+              limit: 3,
+            })
+          : supabase
+              .from('articles')
+              .select(
+                `
           id,
           title,
           slug,
@@ -45,17 +57,19 @@ export default function PersonalDevelopmentPage() {
             )
           )
         `
-          )
-          .eq('status', 'published')
-          .eq('section', 'Personal Development')
-          .eq('featured', true)
-          .order('published_at', { ascending: false })
-          .limit(3),
+              )
+              .eq('status', 'published')
+              .eq('section', 'Personal Development')
+              .eq('featured', true)
+              .order('published_at', { ascending: false })
+              .limit(3),
 
-        supabase
-          .from('articles')
-          .select(
-            `
+        isStaticDataMode
+          ? getStaticArticles({ section: 'Personal Development', limit: 9 })
+          : supabase
+              .from('articles')
+              .select(
+                `
           id,
           title,
           slug,
@@ -73,11 +87,11 @@ export default function PersonalDevelopmentPage() {
             )
           )
         `
-          )
-          .eq('status', 'published')
-          .eq('section', 'Personal Development')
-          .order('published_at', { ascending: false })
-          .limit(9),
+              )
+              .eq('status', 'published')
+              .eq('section', 'Personal Development')
+              .order('published_at', { ascending: false })
+              .limit(9),
       ])
 
       if (featuredResult.error || latestResult.error) {
@@ -123,10 +137,12 @@ export default function PersonalDevelopmentPage() {
 
   React.useEffect(() => {
     async function loadMetrics() {
-      const { data, error } = await supabase
-        .from('personal_metrics')
-        .select(
-          `
+      const { data, error } = isStaticDataMode
+        ? await getStaticPersonalMetrics()
+        : await supabase
+            .from('personal_metrics')
+            .select(
+              `
           id,
           name,
           slug,
@@ -137,8 +153,8 @@ export default function PersonalDevelopmentPage() {
           target,
           frequency
         `
-        )
-        .eq('active', true)
+            )
+            .eq('active', true)
 
       if (error) {
         console.error('Failed to load personal metrics:', error)
@@ -156,11 +172,13 @@ export default function PersonalDevelopmentPage() {
 
   React.useEffect(() => {
     async function loadMood() {
-      const { data, error } = await supabase
-        .from('personal_mood')
-        .select('year, month, score, note')
-        .eq('year', new Date().getFullYear())
-        .order('month', { ascending: true })
+      const { data, error } = isStaticDataMode
+        ? await getStaticPersonalMood(new Date().getFullYear())
+        : await supabase
+            .from('personal_mood')
+            .select('year, month, score, note')
+            .eq('year', new Date().getFullYear())
+            .order('month', { ascending: true })
 
       if (error) {
         console.error('Failed to load mood entries:', error)

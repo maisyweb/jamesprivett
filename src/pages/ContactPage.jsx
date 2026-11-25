@@ -3,6 +3,7 @@ import Header from '../components/Header'
 import Arrow from '../components/Arrow'
 import SiteFooter from '../components/SiteFooter'
 import { supabase } from '../lib/supabase'
+import { isStaticDataMode } from '../lib/staticData'
 
 const contactEmail = 'hello@jamesprivett.co.uk'
 
@@ -153,108 +154,124 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <form
-              onSubmit={handleSubmit}
-              className="rounded-2xl border border-white/10 bg-[#0e1218] p-6 sm:p-8"
-            >
-              <div className="grid gap-6 sm:grid-cols-2">
-                <div>
-                  <label
-                    htmlFor="contact-name"
-                    className="block text-sm font-semibold text-slate-300"
-                  >
-                    Name
-                  </label>
-                  <input
-                    id="contact-name"
-                    name="name"
-                    type="text"
-                    value={form.name}
-                    onChange={handleChange}
-                    maxLength={120}
-                    required
-                    autoComplete="name"
-                    className="mt-2 w-full rounded-xl border border-white/10 bg-[#090b0f] px-4 py-3 text-base text-white outline-none transition placeholder:text-subtle focus:border-[var(--engineering)]/60"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="contact-email"
-                    className="block text-sm font-semibold text-slate-300"
-                  >
-                    Email
-                  </label>
-                  <input
-                    id="contact-email"
-                    name="email"
-                    type="email"
-                    value={form.email}
-                    onChange={handleChange}
-                    maxLength={254}
-                    required
-                    autoComplete="email"
-                    className="mt-2 w-full rounded-xl border border-white/10 bg-[#090b0f] px-4 py-3 text-base text-white outline-none transition placeholder:text-subtle focus:border-[var(--engineering)]/60"
-                  />
-                </div>
-              </div>
-
-              <div className="mt-6">
-                <label
-                  htmlFor="contact-subject"
-                  className="block text-sm font-semibold text-slate-300"
-                >
-                  Subject
-                </label>
-                <input
-                  id="contact-subject"
-                  name="subject"
-                  type="text"
-                  value={form.subject}
-                  onChange={handleChange}
-                  maxLength={200}
-                  required
-                  className="mt-2 w-full rounded-xl border border-white/10 bg-[#090b0f] px-4 py-3 text-base text-white outline-none transition placeholder:text-subtle focus:border-[var(--engineering)]/60"
-                />
-              </div>
-
-              <div className="mt-6">
-                <label
-                  htmlFor="contact-message"
-                  className="block text-sm font-semibold text-slate-300"
-                >
-                  Message
-                </label>
-                <textarea
-                  id="contact-message"
-                  name="message"
-                  value={form.message}
-                  onChange={handleChange}
-                  maxLength={10000}
-                  required
-                  rows="7"
-                  className="mt-2 w-full resize-y rounded-xl border border-white/10 bg-[#090b0f] px-4 py-3 text-base text-white outline-none transition placeholder:text-subtle focus:border-[var(--engineering)]/60"
-                />
-              </div>
-
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="mt-7 inline-flex items-center gap-2 rounded-full bg-[var(--engineering)] px-5 py-3 text-sm font-semibold text-[#06111e] transition hover:-translate-y-0.5 hover:brightness-110"
-              >
-                {isSubmitting ? 'Sending...' : 'Send message'}{' '}
-                {!isSubmitting && <Arrow />}
-              </button>
-              {submitMessage && (
-                <p
-                  className="mt-4 text-sm leading-6 text-slate-300"
-                  role="status"
-                  aria-live="polite"
-                >
-                  {submitMessage}
+            {isStaticDataMode ? (
+              <div className="rounded-2xl border border-white/10 bg-[#0e1218] p-6 sm:p-8">
+                <h3 className="text-xl font-semibold">Send me an email</h3>
+                <p className="mt-3 text-base leading-7 text-slate-400">
+                  The contact form is switched off for a few weeks. Email works
+                  just as well, and I&apos;ll get back to you as soon as I can.
                 </p>
-              )}
-            </form>
+                <a
+                  href={`mailto:${contactEmail}`}
+                  className="mt-7 inline-flex items-center gap-2 rounded-full bg-[var(--engineering)] px-5 py-3 text-sm font-semibold text-[#06111e] transition hover:-translate-y-0.5 hover:brightness-110"
+                >
+                  Email {contactEmail} <Arrow />
+                </a>
+              </div>
+            ) : (
+              <form
+                onSubmit={handleSubmit}
+                className="rounded-2xl border border-white/10 bg-[#0e1218] p-6 sm:p-8"
+              >
+                <div className="grid gap-6 sm:grid-cols-2">
+                  <div>
+                    <label
+                      htmlFor="contact-name"
+                      className="block text-sm font-semibold text-slate-300"
+                    >
+                      Name
+                    </label>
+                    <input
+                      id="contact-name"
+                      name="name"
+                      type="text"
+                      value={form.name}
+                      onChange={handleChange}
+                      maxLength={120}
+                      required
+                      autoComplete="name"
+                      className="mt-2 w-full rounded-xl border border-white/10 bg-[#090b0f] px-4 py-3 text-base text-white outline-none transition placeholder:text-subtle focus:border-[var(--engineering)]/60"
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="contact-email"
+                      className="block text-sm font-semibold text-slate-300"
+                    >
+                      Email
+                    </label>
+                    <input
+                      id="contact-email"
+                      name="email"
+                      type="email"
+                      value={form.email}
+                      onChange={handleChange}
+                      maxLength={254}
+                      required
+                      autoComplete="email"
+                      className="mt-2 w-full rounded-xl border border-white/10 bg-[#090b0f] px-4 py-3 text-base text-white outline-none transition placeholder:text-subtle focus:border-[var(--engineering)]/60"
+                    />
+                  </div>
+                </div>
+
+                <div className="mt-6">
+                  <label
+                    htmlFor="contact-subject"
+                    className="block text-sm font-semibold text-slate-300"
+                  >
+                    Subject
+                  </label>
+                  <input
+                    id="contact-subject"
+                    name="subject"
+                    type="text"
+                    value={form.subject}
+                    onChange={handleChange}
+                    maxLength={200}
+                    required
+                    className="mt-2 w-full rounded-xl border border-white/10 bg-[#090b0f] px-4 py-3 text-base text-white outline-none transition placeholder:text-subtle focus:border-[var(--engineering)]/60"
+                  />
+                </div>
+
+                <div className="mt-6">
+                  <label
+                    htmlFor="contact-message"
+                    className="block text-sm font-semibold text-slate-300"
+                  >
+                    Message
+                  </label>
+                  <textarea
+                    id="contact-message"
+                    name="message"
+                    value={form.message}
+                    onChange={handleChange}
+                    maxLength={10000}
+                    required
+                    rows="7"
+                    className="mt-2 w-full resize-y rounded-xl border border-white/10 bg-[#090b0f] px-4 py-3 text-base text-white outline-none transition placeholder:text-subtle focus:border-[var(--engineering)]/60"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="mt-7 inline-flex items-center gap-2 rounded-full bg-[var(--engineering)] px-5 py-3 text-sm font-semibold text-[#06111e] transition hover:-translate-y-0.5 hover:brightness-110"
+                >
+                  {isSubmitting ? 'Sending...' : 'Send message'}{' '}
+                  {!isSubmitting && <Arrow />}
+                </button>
+                {submitMessage && (
+                  <p
+                    className="mt-4 text-sm leading-6 text-slate-300"
+                    role="status"
+                    aria-live="polite"
+                  >
+                    {submitMessage}
+                  </p>
+                )}
+              </form>
+            )}
           </div>
         </section>
       </main>

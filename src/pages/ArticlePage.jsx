@@ -2,6 +2,7 @@ import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { supabase } from '../lib/supabase'
+import { isStaticDataMode, getStaticArticle } from '../lib/staticData'
 import Header from '../components/Header'
 import SiteFooter from '../components/SiteFooter'
 import SEO from '../components/SEO'
@@ -19,10 +20,12 @@ export default function ArticlePage({ slug }) {
       setLoading(true)
       setError(null)
 
-      const { data, error: articleError } = await supabase
-        .from('articles')
-        .select(
-          `
+      const { data, error: articleError } = isStaticDataMode
+        ? await getStaticArticle(slug)
+        : await supabase
+            .from('articles')
+            .select(
+              `
           id,
           title,
           slug,
@@ -41,10 +44,10 @@ export default function ArticlePage({ slug }) {
             )
           )
         `
-        )
-        .eq('slug', slug)
-        .eq('status', 'published')
-        .single()
+            )
+            .eq('slug', slug)
+            .eq('status', 'published')
+            .single()
 
       if (articleError) {
         console.error('Failed to load article:', articleError)

@@ -1,5 +1,6 @@
 import React from 'react'
 import { supabase } from '../lib/supabase'
+import { isStaticDataMode, getStaticArticles } from '../lib/staticData'
 import Header from '../components/Header'
 import SectionHeading from '../components/SectionHeading'
 import Arrow from '../components/Arrow'
@@ -18,10 +19,16 @@ export default function MentoringPage() {
       setArticlesError(null)
 
       const [featuredResult, latestResult] = await Promise.all([
-        supabase
-          .from('articles')
-          .select(
-            `
+        isStaticDataMode
+          ? getStaticArticles({
+              section: 'Mentoring',
+              featured: true,
+              limit: 3,
+            })
+          : supabase
+              .from('articles')
+              .select(
+                `
             id,
             title,
             slug,
@@ -39,17 +46,19 @@ export default function MentoringPage() {
               )
             )
           `
-          )
-          .eq('status', 'published')
-          .eq('section', 'Mentoring')
-          .eq('featured', true)
-          .order('published_at', { ascending: false })
-          .limit(3),
+              )
+              .eq('status', 'published')
+              .eq('section', 'Mentoring')
+              .eq('featured', true)
+              .order('published_at', { ascending: false })
+              .limit(3),
 
-        supabase
-          .from('articles')
-          .select(
-            `
+        isStaticDataMode
+          ? getStaticArticles({ section: 'Mentoring', limit: 9 })
+          : supabase
+              .from('articles')
+              .select(
+                `
             id,
             title,
             slug,
@@ -67,11 +76,11 @@ export default function MentoringPage() {
               )
             )
           `
-          )
-          .eq('status', 'published')
-          .eq('section', 'Mentoring')
-          .order('published_at', { ascending: false })
-          .limit(9),
+              )
+              .eq('status', 'published')
+              .eq('section', 'Mentoring')
+              .order('published_at', { ascending: false })
+              .limit(9),
       ])
 
       if (featuredResult.error || latestResult.error) {

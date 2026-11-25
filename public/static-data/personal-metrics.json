@@ -1,0 +1,46 @@
+[
+  {
+    "id": "eb59034a-5cac-4376-ab4b-ec431b47bcbb",
+    "name": "Workouts",
+    "slug": "workouts",
+    "category": "Physical health",
+    "unit": "workouts per week",
+    "value": 4,
+    "starting_value": null,
+    "target": 4,
+    "frequency": "weekly average"
+  },
+  {
+    "id": "7137af60-9adc-461e-a856-5de693682689",
+    "name": "Average sleep",
+    "slug": "sleep",
+    "category": "Recovery",
+    "unit": "hours per night",
+    "value": 7.5,
+    "starting_value": null,
+    "target": 8,
+    "frequency": "current average"
+  },
+  {
+    "id": "9283927f-132f-481a-95fd-10bd1fafb5c9",
+    "name": "Books read",
+    "slug": "books-read",
+    "category": "Learning",
+    "unit": "books this year",
+    "value": 12,
+    "starting_value": null,
+    "target": 26,
+    "frequency": "yearly total"
+  },
+  {
+    "id": "1cd40c6a-0528-4a85-8a43-03b01bfc3333",
+    "name": "Body weight",
+    "slug": "body-weight",
+    "category": "Physical health",
+    "unit": "lbs",
+    "value": 182,
+    "starting_value": 236,
+    "target": null,
+    "frequency": "current"
+  }
+]

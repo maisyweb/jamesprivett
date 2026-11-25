@@ -1,0 +1,50 @@
+{
+  "id": 25,
+  "title": "Willpower Is Overrated",
+  "slug": "willpower-is-overrated",
+  "section": "Personal Development",
+  "category": "Mindset",
+  "excerpt": "We often think change is about having enough willpower. But perhaps the bigger shift happens when we change the way we think about what we're doing, turning things we feel we have to do into things we genuinely want to do.",
+  "content": "We often talk about willpower as though it's the secret ingredient for making a change. If you want to get fitter, eat better, learn something new, be more productive or just build better habits, the advice always seems to be the same: you need more discipline and more willpower.\n\nI'm starting to think that's the wrong way to look at it.\n\nThe problem with willpower is that it turns change into a constant battle with yourself. You want to do one thing, another part of you wants to do something easier, and you spend your time trying to force yourself into the \"right\" choice. What if you changed the way you thought about the choice instead?\n\nTake going to the gym. If I think *\"I have to go to the gym\"*, I've created something I need to overcome. I might be tired, busy or just not in the mood, so I'm relying on willpower to get me there. If I think *\"I want to go to the gym because looking after myself is important to me\"*, the decision becomes much easier. The gym hasn't changed. The way I think about it has.\n\nI think that applies to almost anything. If you want to read more, find something you're curious about, so reading stops being another task you feel you should do. If you want to eat better, focus on how eating well makes you feel instead of the things you're not allowed. If you want to learn a new skill, aim to become someone who enjoys learning, not someone forcing themselves through another course. The behaviour is often the same, but the mindset behind it is completely different.\n\nWillpower and discipline are still useful, of course. There will always be days when you don't feel like doing something and you just have to get on with it. That's much easier when it's something you want for yourself. Occasionally pushing yourself towards something you care about is very different from constantly forcing yourself to do something you don't.\n\nSo I don't think the goal is to develop incredible willpower. It's closer to reaching a point where you don't need much of it. When something becomes part of who you are and how you want to live, it stops being a daily decision. You don't have to convince yourself every morning. It's just what you do.\n\nMaybe that's the real trick to personal development. Instead of asking, *\"How can I make myself do this?\"*, ask, *\"How can I change the way I think about this so that I actually want to do it?\"*",
+  "reading_time": 3,
+  "published_at": "2026-10-05T09:30:59.274+00:00",
+  "cover_image": "/static-data/images/cb288158-a0b7-46f5-bcc6-3cabbe97e519.jpeg",
+  "featured": false,
+  "article_tags": [
+    {
+      "tags": {
+        "id": 51,
+        "name": "Personal Growth",
+        "slug": "personal-growth"
+      }
+    },
+    {
+      "tags": {
+        "id": 40,
+        "name": "Consistency",
+        "slug": "consistency"
+      }
+    },
+    {
+      "tags": {
+        "id": 58,
+        "name": "Habits",
+        "slug": "habits"
+      }
+    },
+    {
+      "tags": {
+        "id": 34,
+        "name": "Self-Awareness",
+        "slug": "self-awareness"
+      }
+    },
+    {
+      "tags": {
+        "id": 37,
+        "name": "Goals",
+        "slug": "goals"
+      }
+    }
+  ]
+}
