@@ -1,0 +1,863 @@
+[
+  {
+    "id": 31,
+    "title": "When Artificial Intelligence Leaves the Screen",
+    "slug": "when-artificial-intelligence-leaves-the-screen",
+    "section": "Engineering",
+    "category": "AI & Engineering",
+    "excerpt": "For years, robots have been programmed to perform repetitive tasks in controlled environments. Artificial intelligence is beginning to change that. Robots are learning to interpret their surroundings, understand instructions and adapt to situations they haven't encountered before. Could we be approaching a future where robots become a much more familiar part of everyday life?",
+    "reading_time": 5,
+    "published_at": "2026-11-19T15:11:40.549+00:00",
+    "cover_image": "/static-data/images/548cffcc-77ae-48ca-9613-9252993d41ed.jpeg",
+    "featured": false,
+    "article_tags": [
+      {
+        "tags": {
+          "id": 27,
+          "name": "AI",
+          "slug": "ai"
+        }
+      },
+      {
+        "tags": {
+          "id": 29,
+          "name": "Productivity",
+          "slug": "productivity"
+        }
+      },
+      {
+        "tags": {
+          "id": 30,
+          "name": "Future of Work",
+          "slug": "future-of-work"
+        }
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "title": "AI Is Learning to See, Hear and Understand the World",
+    "slug": "ai-is-learning-to-see-hear-and-understand-the-world",
+    "section": "Engineering",
+    "category": "AI & Engineering",
+    "excerpt": "AI is moving beyond text-based conversations. It can now interpret images, understand speech, analyse video and even help robots interact with the physical world. What does this mean for everyday life, and how might these developments change the way we interact with technology?",
+    "reading_time": 5,
+    "published_at": "2026-11-13T09:12:16.784+00:00",
+    "cover_image": "/static-data/images/8fbe6f3f-48ae-4e3f-ac92-a771055a3787.jpeg",
+    "featured": false,
+    "article_tags": [
+      {
+        "tags": {
+          "id": 27,
+          "name": "AI",
+          "slug": "ai"
+        }
+      },
+      {
+        "tags": {
+          "id": 30,
+          "name": "Future of Work",
+          "slug": "future-of-work"
+        }
+      },
+      {
+        "tags": {
+          "id": 28,
+          "name": "Software Engineering",
+          "slug": "software-engineering"
+        }
+      },
+      {
+        "tags": {
+          "id": 57,
+          "name": "Learning",
+          "slug": "learning"
+        }
+      },
+      {
+        "tags": {
+          "id": 29,
+          "name": "Productivity",
+          "slug": "productivity"
+        }
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "title": "Judge People by Their Character, Not Their Labels",
+    "slug": "judge-people-by-their-character-not-their-labels",
+    "section": "Personal Development",
+    "category": "Stuff",
+    "excerpt": "It's easy to judge people by their views, beliefs or the groups they belong to. But these labels rarely tell the whole story. Real character is revealed through kindness, empathy and how we treat others. Before deciding who someone is, give them the chance to show you.",
+    "reading_time": 5,
+    "published_at": "2026-11-01T13:10:35.385+00:00",
+    "cover_image": "/static-data/images/c17440ce-d37a-44f9-817e-390c292fb98c.jpeg",
+    "featured": false,
+    "article_tags": [
+      {
+        "tags": {
+          "id": 51,
+          "name": "Personal Growth",
+          "slug": "personal-growth"
+        }
+      },
+      {
+        "tags": {
+          "id": 34,
+          "name": "Self-Awareness",
+          "slug": "self-awareness"
+        }
+      },
+      {
+        "tags": {
+          "id": 32,
+          "name": "Communication",
+          "slug": "communication"
+        }
+      },
+      {
+        "tags": {
+          "id": 62,
+          "name": "Personality",
+          "slug": "personality"
+        }
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "title": "Passion vs. Perseverance: What Keeps You Going for the Long Haul?",
+    "slug": "passion-vs-perseverance-what-keeps-you-going-for-the-long-haul",
+    "section": "Personal Development",
+    "category": "Mindset",
+    "excerpt": "Passion gives us a reason to keep going, while perseverance helps us push through when things get difficult. But how do the two work together, and what can they teach us about building lasting habits, pursuing meaningful goals and creating a life that reflects what truly matters to us?",
+    "reading_time": 4,
+    "published_at": "2026-10-29T14:07:51.213+00:00",
+    "cover_image": "/static-data/images/e9f69c03-6ae8-4ba4-87cd-61bfedabfdcd.jpeg",
+    "featured": false,
+    "article_tags": [
+      {
+        "tags": {
+          "id": 34,
+          "name": "Self-Awareness",
+          "slug": "self-awareness"
+        }
+      },
+      {
+        "tags": {
+          "id": 37,
+          "name": "Goals",
+          "slug": "goals"
+        }
+      },
+      {
+        "tags": {
+          "id": 40,
+          "name": "Consistency",
+          "slug": "consistency"
+        }
+      },
+      {
+        "tags": {
+          "id": 51,
+          "name": "Personal Growth",
+          "slug": "personal-growth"
+        }
+      },
+      {
+        "tags": {
+          "id": 58,
+          "name": "Habits",
+          "slug": "habits"
+        }
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "title": "What Can You Actually Gain From Having a Mentor?",
+    "slug": "what-can-you-actually-gain-from-having-a-mentor",
+    "section": "Mentoring",
+    "category": "Mentoring",
+    "excerpt": "A good mentor can help you see opportunities you might have missed, navigate difficult situations and develop the confidence to take your next step. But the real value of mentoring goes beyond advice, it's about building the skills, judgement and independence to shape your own future.",
+    "reading_time": 5,
+    "published_at": "2026-10-18T19:42:44.342+00:00",
+    "cover_image": "/static-data/images/9e3aaa25-3cef-4040-859b-99753ccfade4.jpeg",
+    "featured": false,
+    "article_tags": [
+      {
+        "tags": {
+          "id": 33,
+          "name": "Confidence",
+          "slug": "confidence"
+        }
+      },
+      {
+        "tags": {
+          "id": 50,
+          "name": "Independence",
+          "slug": "independence"
+        }
+      },
+      {
+        "tags": {
+          "id": 51,
+          "name": "Personal Growth",
+          "slug": "personal-growth"
+        }
+      },
+      {
+        "tags": {
+          "id": 57,
+          "name": "Learning",
+          "slug": "learning"
+        }
+      },
+      {
+        "tags": {
+          "id": 60,
+          "name": "Mentoring",
+          "slug": "mentoring"
+        }
+      },
+      {
+        "tags": {
+          "id": 61,
+          "name": "Career Development",
+          "slug": "career-development"
+        }
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "title": "Self-Confidence Is Built, Not Born",
+    "slug": "self-confidence-is-built-not-born",
+    "section": "Personal Development",
+    "category": "Mindset",
+    "excerpt": "Self-confidence isn't something you either have or you don't. It's something you can build through small daily actions, keeping promises to yourself and learning to trust your own judgement. Here are some simple habits you can start today to develop greater confidence in yourself and what you can achieve.",
+    "reading_time": 5,
+    "published_at": "2026-10-13T09:14:10.704+00:00",
+    "cover_image": "/static-data/images/a0438ccc-80ba-479a-816a-5526abf15e8c.jpeg",
+    "featured": false,
+    "article_tags": [
+      {
+        "tags": {
+          "id": 33,
+          "name": "Confidence",
+          "slug": "confidence"
+        }
+      },
+      {
+        "tags": {
+          "id": 34,
+          "name": "Self-Awareness",
+          "slug": "self-awareness"
+        }
+      },
+      {
+        "tags": {
+          "id": 40,
+          "name": "Consistency",
+          "slug": "consistency"
+        }
+      },
+      {
+        "tags": {
+          "id": 51,
+          "name": "Personal Growth",
+          "slug": "personal-growth"
+        }
+      },
+      {
+        "tags": {
+          "id": 58,
+          "name": "Habits",
+          "slug": "habits"
+        }
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "title": "Willpower Is Overrated",
+    "slug": "willpower-is-overrated",
+    "section": "Personal Development",
+    "category": "Mindset",
+    "excerpt": "We often think change is about having enough willpower. But perhaps the bigger shift happens when we change the way we think about what we're doing, turning things we feel we have to do into things we genuinely want to do.",
+    "reading_time": 3,
+    "published_at": "2026-10-05T09:30:59.274+00:00",
+    "cover_image": "/static-data/images/cb288158-a0b7-46f5-bcc6-3cabbe97e519.jpeg",
+    "featured": false,
+    "article_tags": [
+      {
+        "tags": {
+          "id": 51,
+          "name": "Personal Growth",
+          "slug": "personal-growth"
+        }
+      },
+      {
+        "tags": {
+          "id": 40,
+          "name": "Consistency",
+          "slug": "consistency"
+        }
+      },
+      {
+        "tags": {
+          "id": 58,
+          "name": "Habits",
+          "slug": "habits"
+        }
+      },
+      {
+        "tags": {
+          "id": 34,
+          "name": "Self-Awareness",
+          "slug": "self-awareness"
+        }
+      },
+      {
+        "tags": {
+          "id": 37,
+          "name": "Goals",
+          "slug": "goals"
+        }
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "title": "What Do You Do When Your High Performer Has a Bad Attitude?",
+    "slug": "what-do-you-do-when-your-high-performer-has-a-bad-attitude",
+    "section": "Mentoring",
+    "category": "Leadership",
+    "excerpt": "A case study about one of the hardest situations for a manager: when someone delivers exceptional results but their behaviour is damaging the team. How do you balance performance with the way someone treats the people around them?",
+    "reading_time": 5,
+    "published_at": "2026-10-01T10:57:41.759746+00:00",
+    "cover_image": "/static-data/images/a4fa473f-5a26-4587-80fe-848a17e52c56.jpeg",
+    "featured": false,
+    "article_tags": [
+      {
+        "tags": {
+          "id": 44,
+          "name": "Management",
+          "slug": "management"
+        }
+      },
+      {
+        "tags": {
+          "id": 43,
+          "name": "Leadership",
+          "slug": "leadership"
+        }
+      },
+      {
+        "tags": {
+          "id": 45,
+          "name": "High Performers",
+          "slug": "high-performers"
+        }
+      },
+      {
+        "tags": {
+          "id": 46,
+          "name": "Difficult Conversations",
+          "slug": "difficult-conversations"
+        }
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "title": "How to Get More From GitHub Copilot Without Burning Through Your Credits",
+    "slug": "how-to-get-more-from-github-copilot-without-burning-through-your-credits",
+    "section": "Engineering",
+    "category": "AI & Engineering",
+    "excerpt": "GitHub Copilot has become a genuinely useful part of how I build software, but using it effectively isn't just about asking it to write more code. I've been learning that how you use AI matters just as much as having access to it.",
+    "reading_time": 5,
+    "published_at": "2026-09-28T19:04:40.644565+00:00",
+    "cover_image": "/static-data/images/4fba75ad-6297-4ac7-824e-ef9dbfec9e44.jpeg",
+    "featured": true,
+    "article_tags": [
+      {
+        "tags": {
+          "id": 35,
+          "name": "GitHub Copilot",
+          "slug": "github-copilot"
+        }
+      },
+      {
+        "tags": {
+          "id": 27,
+          "name": "AI",
+          "slug": "ai"
+        }
+      },
+      {
+        "tags": {
+          "id": 29,
+          "name": "Productivity",
+          "slug": "productivity"
+        }
+      },
+      {
+        "tags": {
+          "id": 36,
+          "name": "Developer Tools",
+          "slug": "developer-tools"
+        }
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "title": "What type of monster am I?",
+    "slug": "what-type-of-monster-am-i",
+    "section": "Other",
+    "category": "Stuff",
+    "excerpt": "For a laugh I asked ChatGPT 'based on everything you know about me create an original monster that based on my personality and character.' Here are the results!",
+    "reading_time": 3,
+    "published_at": "2026-09-26T14:14:32.290043+00:00",
+    "cover_image": "/static-data/images/558f4961-59db-4934-822b-243c4e77fa26.png",
+    "featured": false,
+    "article_tags": [
+      {
+        "tags": {
+          "id": 63,
+          "name": "Fun",
+          "slug": "fun"
+        }
+      },
+      {
+        "tags": {
+          "id": 65,
+          "name": "Random",
+          "slug": "random"
+        }
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "title": "GPS: A Simple Way to Turn Goals Into Action",
+    "slug": "gps-a-simple-way-to-turn-goals-into-action",
+    "section": "Personal Development",
+    "category": "Mindset",
+    "excerpt": "I've always understood the importance of setting goals, but recently I came across a simple framework that changed the way I think about actually achieving them. The GPS Method — Goal, Plan, System — takes a goal and turns it into something much more practical: a destination, a route, and a way of keeping yourself moving.",
+    "reading_time": 4,
+    "published_at": "2026-09-15T12:50:08.565389+00:00",
+    "cover_image": "/static-data/images/bd096cac-4531-4a73-8e51-55a365154edb.jpeg",
+    "featured": true,
+    "article_tags": [
+      {
+        "tags": {
+          "id": 39,
+          "name": "Action",
+          "slug": "action"
+        }
+      },
+      {
+        "tags": {
+          "id": 38,
+          "name": "Planning",
+          "slug": "planning"
+        }
+      },
+      {
+        "tags": {
+          "id": 37,
+          "name": "Goals",
+          "slug": "goals"
+        }
+      },
+      {
+        "tags": {
+          "id": 40,
+          "name": "Consistency",
+          "slug": "consistency"
+        }
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "title": "Your Body Speaks Before You Do",
+    "slug": "your-body-speaks-before-you-do",
+    "section": "Personal Development",
+    "category": "Mindset",
+    "excerpt": "Getting into better shape has changed more than my appearance. I've noticed a difference in how I carry myself, how I feel walking into a room and, perhaps, how other people respond to me. But the biggest change isn't what my body says to other people - it's what getting fit has taught me about myself.",
+    "reading_time": 4,
+    "published_at": "2026-09-10T05:15:05.989322+00:00",
+    "cover_image": "/static-data/images/b480eaca-e3b3-4920-b405-88690dad41ad.jpeg",
+    "featured": true,
+    "article_tags": [
+      {
+        "tags": {
+          "id": 31,
+          "name": "Body Language",
+          "slug": "body-language"
+        }
+      },
+      {
+        "tags": {
+          "id": 32,
+          "name": "Communication",
+          "slug": "communication"
+        }
+      },
+      {
+        "tags": {
+          "id": 33,
+          "name": "Confidence",
+          "slug": "confidence"
+        }
+      },
+      {
+        "tags": {
+          "id": 34,
+          "name": "Self-Awareness",
+          "slug": "self-awareness"
+        }
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "title": "Getting Fitter Makes You Mentally Stronger Too",
+    "slug": "getting-fitter-makes-you-mentally-stronger-too",
+    "section": "Personal Development",
+    "category": "Mindset",
+    "excerpt": "Getting fitter has changed more than my body. The discipline of training, learning to do things when I don't feel like it and becoming more comfortable with discomfort has changed how I approach difficult things outside the gym too.",
+    "reading_time": 4,
+    "published_at": "2026-07-27T19:36:23.076291+00:00",
+    "cover_image": "/static-data/images/41b8aa5a-b454-4e20-b3d8-1dcafd9b6df7.jpeg",
+    "featured": true,
+    "article_tags": [
+      {
+        "tags": {
+          "id": 42,
+          "name": "Mental Health",
+          "slug": "mental-health"
+        }
+      },
+      {
+        "tags": {
+          "id": 41,
+          "name": "Fitness",
+          "slug": "fitness"
+        }
+      },
+      {
+        "tags": {
+          "id": 40,
+          "name": "Consistency",
+          "slug": "consistency"
+        }
+      },
+      {
+        "tags": {
+          "id": 33,
+          "name": "Confidence",
+          "slug": "confidence"
+        }
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "title": "AI Won't Replace Good Engineers ( for now ). But Good Engineers Will Use AI.",
+    "slug": "ai-wont-replace-good-engineers",
+    "section": "Engineering",
+    "category": "AI & Engineering",
+    "excerpt": "AI is changing software engineering at a remarkable pace. The opportunity isn't to choose between AI and engineers, but to combine the two: let AI handle more of the work while experienced engineers provide the context, judgement and healthy scepticism needed to make sure the result is actually good.",
+    "reading_time": 8,
+    "published_at": "2026-05-11T11:12:42.04997+00:00",
+    "cover_image": "/static-data/images/0501765c-2bc2-4dca-b57c-9eeba3fd8ede.jpeg",
+    "featured": true,
+    "article_tags": [
+      {
+        "tags": {
+          "id": 27,
+          "name": "AI",
+          "slug": "ai"
+        }
+      },
+      {
+        "tags": {
+          "id": 28,
+          "name": "Software Engineering",
+          "slug": "software-engineering"
+        }
+      },
+      {
+        "tags": {
+          "id": 29,
+          "name": "Productivity",
+          "slug": "productivity"
+        }
+      },
+      {
+        "tags": {
+          "id": 30,
+          "name": "Future of Work",
+          "slug": "future-of-work"
+        }
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "title": "Reading Might Be One of the Best Health Hacks",
+    "slug": "reading-might-be-one-of-the-best-health-hacks",
+    "section": "Personal Development",
+    "category": "Habits",
+    "excerpt": "Reading has become one of the simplest habits I've added to my routine. I'm aiming for one book every two weeks, and I'm finding that 30 minutes with a book feels very different from 30 minutes scrolling on my phone. There may even be some interesting long-term health benefits.",
+    "reading_time": 5,
+    "published_at": "2026-04-17T16:38:57.302221+00:00",
+    "cover_image": "/static-data/images/f4de681f-b66a-45c6-9168-421f128483b4.jpeg",
+    "featured": true,
+    "article_tags": [
+      {
+        "tags": {
+          "id": 55,
+          "name": "Reading",
+          "slug": "reading"
+        }
+      },
+      {
+        "tags": {
+          "id": 56,
+          "name": "Health",
+          "slug": "health"
+        }
+      },
+      {
+        "tags": {
+          "id": 57,
+          "name": "Learning",
+          "slug": "learning"
+        }
+      },
+      {
+        "tags": {
+          "id": 58,
+          "name": "Habits",
+          "slug": "habits"
+        }
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Becoming a Manager Is Only Half the Job",
+    "slug": "becoming-a-manager-is-only-half-the-job",
+    "section": "Mentoring",
+    "category": "Leadership",
+    "excerpt": "A personal reflection on the difference between managing people and leading them.",
+    "reading_time": 5,
+    "published_at": "2026-04-13T02:02:15.27765+00:00",
+    "cover_image": "/static-data/images/f58bdd36-3a7f-4afa-944d-a60d3b420820.jpeg",
+    "featured": false,
+    "article_tags": [
+      {
+        "tags": {
+          "id": 43,
+          "name": "Leadership",
+          "slug": "leadership"
+        }
+      },
+      {
+        "tags": {
+          "id": 44,
+          "name": "Management",
+          "slug": "management"
+        }
+      },
+      {
+        "tags": {
+          "id": 53,
+          "name": "New Managers",
+          "slug": "new-managers"
+        }
+      },
+      {
+        "tags": {
+          "id": 54,
+          "name": "People Management",
+          "slug": "people-management"
+        }
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "title": "How to Get the Most Out of Your First Conversation With a Mentor",
+    "slug": "how-to-get-the-most-out-of-your-first-conversation-with-a-mentor",
+    "section": "Mentoring",
+    "category": "Getting Started",
+    "excerpt": "Your first conversation with a mentor doesn't need to be complicated. Here's the simple 30–40 minute structure I like the people I mentor to use, and why coming prepared, asking good questions and leaving with clear actions can make mentoring far more valuable.",
+    "reading_time": 6,
+    "published_at": "2026-01-29T17:02:22.111517+00:00",
+    "cover_image": "/static-data/images/d16876d8-b56f-4ccb-96c9-22da96a5b4d6.jpeg",
+    "featured": false,
+    "article_tags": [
+      {
+        "tags": {
+          "id": 32,
+          "name": "Communication",
+          "slug": "communication"
+        }
+      },
+      {
+        "tags": {
+          "id": 60,
+          "name": "Mentoring",
+          "slug": "mentoring"
+        }
+      },
+      {
+        "tags": {
+          "id": 37,
+          "name": "Goals",
+          "slug": "goals"
+        }
+      },
+      {
+        "tags": {
+          "id": 61,
+          "name": "Career Development",
+          "slug": "career-development"
+        }
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "title": "The Juggling Act of Being a Manager",
+    "slug": "the-juggling-act-of-being-a-manager",
+    "section": "Mentoring",
+    "category": "Leadership",
+    "excerpt": "This article explores the balancing act of managing down and managing up, and why focusing on your responsibilities, supporting your team and taking ownership can ultimately make managing upwards much easier.",
+    "reading_time": 6,
+    "published_at": "2026-01-20T08:32:02.546583+00:00",
+    "cover_image": "/static-data/images/20bf438b-dd97-41ff-8c38-d0057898b1fd.jpeg",
+    "featured": false,
+    "article_tags": [
+      {
+        "tags": {
+          "id": 44,
+          "name": "Management",
+          "slug": "management"
+        }
+      },
+      {
+        "tags": {
+          "id": 43,
+          "name": "Leadership",
+          "slug": "leadership"
+        }
+      },
+      {
+        "tags": {
+          "id": 49,
+          "name": "Priorities",
+          "slug": "priorities"
+        }
+      },
+      {
+        "tags": {
+          "id": 59,
+          "name": "Workload",
+          "slug": "workload"
+        }
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "title": "The Wheel of Life: A Simple Way to Work Out What Needs Attention",
+    "slug": "the-wheel-of-life-a-simple-way-to-work-out-what-needs-attention",
+    "section": "Personal Development",
+    "category": "Self-Improvement",
+    "excerpt": "Sometimes you know something in your life isn’t quite right, but you’re not sure what it is. The Wheel of Life is a simple exercise that can help you step back, look at the bigger picture and identify the areas of your life that might need a little more attention.",
+    "reading_time": 4,
+    "published_at": "2026-01-17T12:55:32.773748+00:00",
+    "cover_image": "/static-data/images/4524fe4e-4f40-438c-88d4-72a6a8a54a8a.jpeg",
+    "featured": true,
+    "article_tags": [
+      {
+        "tags": {
+          "id": 47,
+          "name": "Balance",
+          "slug": "balance"
+        }
+      },
+      {
+        "tags": {
+          "id": 37,
+          "name": "Goals",
+          "slug": "goals"
+        }
+      },
+      {
+        "tags": {
+          "id": 49,
+          "name": "Priorities",
+          "slug": "priorities"
+        }
+      },
+      {
+        "tags": {
+          "id": 48,
+          "name": "Reflection",
+          "slug": "reflection"
+        }
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "title": "The Goal of Mentoring Is to Make Yourself Less Necessary",
+    "slug": "the-goal-of-mentoring-is-to-make-yourself-less-necessary",
+    "section": "Mentoring",
+    "category": "Mentoring",
+    "excerpt": "Good mentoring isn't about creating someone who always comes back for answers. It's about helping people develop the judgement, confidence and independence to handle challenges for themselves.",
+    "reading_time": 6,
+    "published_at": "2026-01-12T19:51:55.548718+00:00",
+    "cover_image": "/static-data/images/809cae22-74bb-448d-abd7-64c6f62e4781.jpeg",
+    "featured": true,
+    "article_tags": [
+      {
+        "tags": {
+          "id": 33,
+          "name": "Confidence",
+          "slug": "confidence"
+        }
+      },
+      {
+        "tags": {
+          "id": 50,
+          "name": "Independence",
+          "slug": "independence"
+        }
+      },
+      {
+        "tags": {
+          "id": 51,
+          "name": "Personal Growth",
+          "slug": "personal-growth"
+        }
+      },
+      {
+        "tags": {
+          "id": 52,
+          "name": "Coaching",
+          "slug": "coaching"
+        }
+      }
+    ]
+  }
+]
